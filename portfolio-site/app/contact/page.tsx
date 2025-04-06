@@ -95,10 +95,10 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href="mailto:email@gmail.com"
+                  href="mailto:mgdevstuff@gmail.com"
                   className="text-primary hover:underline hover:text-primary/80 transition-colors"
                 >
-                  email@gmail.com
+                  mgdevstuff@gmail.com
                 </Link>
               </CardContent>
             </Card>
@@ -112,12 +112,12 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href="https://github.com/yourusername"
+                  href="https://github.com/michaelgreen06"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline hover:text-primary/80 transition-colors"
                 >
-                  github.com/yourusername
+                  github.com/michaelgreen06
                 </Link>
               </CardContent>
             </Card>
@@ -131,12 +131,12 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/michaelgreen2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline hover:text-primary/80 transition-colors"
                 >
-                  linkedin.com/in/yourusername
+                  linkedin.com/in/michaelgreen2
                 </Link>
               </CardContent>
             </Card>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p>San Francisco Bay Area, California</p>
+                <p>Boulder, Colorado</p>
               </CardContent>
             </Card>
           </div>
