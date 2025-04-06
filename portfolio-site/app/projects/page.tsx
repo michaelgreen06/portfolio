@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { projects } from "@/lib/projects"
+import { getAllProjects } from "@/lib/api"
 import ProjectCard from "@/components/features/projects/project-card"
 
 export const metadata: Metadata = {
@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description: "Explore my software development and physical product design projects.",
 }
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  // Get projects from MDX files
+  const projects = await getAllProjects()
+  
   // Simple categorization without complex filtering
   const softwareProjects = projects.filter((p) => p.type === "software")
   const physicalProjects = projects.filter((p) => p.type === "physical")
