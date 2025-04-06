@@ -22,7 +22,7 @@ export default function AboutPage() {
             <div className="sticky top-24">
               <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 mb-6">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
+                  src="https://res.cloudinary.com/dajtc0uhx/image/upload/f_auto,q_auto/v1743924699/5_xpos6e.jpg"
                   alt="Michael Green"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
