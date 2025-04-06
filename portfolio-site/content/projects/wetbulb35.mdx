@@ -1,0 +1,194 @@
+---
+title: "WetBulb35"
+description: "Climate safety app providing real-time heat risk assessments and alerts."
+technologies: ["Next.js", "TypeScript", "Weather API", "D3.js"]
+imageUrl: "/placeholder.svg?height=400&width=600"
+githubUrl: "https://github.com/yourusername/wetbulb35"
+liveUrl: "https://wetbulb35.com"
+featured: true
+date: "2023-10-15"
+type: "software"
+---
+
+# WetBulb35: Climate Safety App
+
+## Project Overview
+
+WetBulb35 is a web application designed to help users understand and mitigate the risks associated with extreme heat events. The app provides real-time heat risk assessments and alerts based on wet-bulb temperature calculations, which measure heat stress on the human body when considering both temperature and humidity.
+
+## The Problem
+
+Climate change is increasing the frequency and intensity of extreme heat events worldwide. Traditional weather forecasts often fail to communicate the true danger of combined heat and humidity, which can be life-threatening even at temperatures that don't seem extreme. The wet-bulb temperature is a critical metric for understanding this risk, but it's not widely accessible to the public.
+
+## The Solution
+
+WetBulb35 addresses this gap by:
+
+1. **Calculating wet-bulb temperatures** from standard weather data
+2. **Visualizing heat risk** on interactive maps
+3. **Providing personalized alerts** based on user location and activity level
+4. **Offering actionable safety recommendations** tailored to specific conditions
+
+## Technical Implementation
+
+### Frontend Development
+
+The application is built with Next.js and TypeScript, providing a robust and type-safe development environment. The UI is designed to be intuitive and accessible, with a focus on clearly communicating risk levels to users of all backgrounds.
+
+### Data Visualization
+
+Using D3.js, we created interactive visualizations that help users understand:
+- Current and forecasted wet-bulb temperatures
+- Historical trends in their region
+- Risk levels for different types of activities
+
+### API Integration
+
+The app integrates with multiple weather data providers to ensure reliable and accurate information. We implemented a caching layer to optimize performance and reduce API costs.
+
+## Challenges and Solutions
+
+### Data Accuracy
+
+**Challenge:** Ensuring accurate wet-bulb calculations across diverse geographic regions.
+
+**Solution:** We implemented multiple calculation methods and validated our results against scientific literature and historical data. We also incorporated uncertainty indicators where appropriate.
+
+### User Comprehension
+
+**Challenge:** Communicating a complex scientific concept to general users.
+
+**Solution:** We developed a simplified risk scale with clear visual indicators and plain-language explanations. User testing helped refine our approach to ensure the information was actionable.
+
+## Outcomes and Impact
+
+WetBulb35 has been used by over 10,000 people during its first summer of operation. Key impacts include:
+
+- **Community adoption:** Several community organizations have integrated WetBulb35 into their extreme heat response plans
+- **Behavioral change:** 78% of surveyed users reported taking protective actions based on the app's recommendations
+- **Education:** Increased awareness of wet-bulb temperature as a critical climate safety metric
+
+## Future Development
+
+We're currently working on several enhancements:
+
+1. **Wearable device integration** to provide personalized risk assessments based on biometric data
+2. **Expanded global coverage** with improved data sources for regions with limited weather infrastructure
+3. **Community features** allowing users to report local conditions and share cooling resources
+
+## Technologies Used
+
+- **Frontend:** Next.js, TypeScript, Tailwind CSS
+- **Data Visualization:** D3.js, Mapbox
+- **APIs:** OpenWeatherMap, NOAA, custom wet-bulb calculation microservice
+- **Deployment:** Vercel, AWS Lambda for computational tasks
+
+This project represents my commitment to using technology to address pressing climate challenges while creating intuitive, user-friendly experiences.
+
+Let's continue adding more example content files:
+
+```markdown file="content/projects/e-commerce-platform.mdx"
+---
+title: "E-Commerce Platform"
+description: "A modern e-commerce solution with advanced product filtering and search capabilities."
+technologies: ["Vue.js", "Nuxt", "Stripe", "Tailwind CSS"]
+imageUrl: "/placeholder.svg?height=400&width=600"
+githubUrl: "https://github.com/yourusername/ecommerce"
+liveUrl: "https://demo-ecommerce.example.com"
+featured: true
+date: "2023-08-20"
+type: "software"
+---
+
+# E-Commerce Platform
+
+## Project Overview
+
+This e-commerce platform was designed to provide small to medium-sized businesses with an affordable yet powerful online shopping solution. The platform focuses on exceptional user experience, fast performance, and flexible customization options.
+
+## Key Features
+
+### Advanced Product Discovery
+
+The platform includes a sophisticated filtering and search system that helps customers find products quickly:
+
+- Faceted search with dynamic filters
+- Intelligent autocomplete suggestions
+- Visual search capabilities
+- Personalized product recommendations
+
+### Seamless Checkout Experience
+
+The checkout process was optimized for conversions:
+
+- Single-page checkout with minimal form fields
+- Multiple payment options including credit cards, PayPal, and Apple Pay
+- Address validation and auto-completion
+- Order tracking and notifications
+
+### Merchant Dashboard
+
+A comprehensive dashboard gives store owners full control:
+
+- Inventory management with low-stock alerts
+- Sales analytics and reporting
+- Customer management and segmentation
+- Marketing tools including discount codes and promotions
+
+## Technical Implementation
+
+### Frontend Architecture
+
+The frontend is built with Vue.js and Nuxt, providing:
+- Server-side rendering for improved SEO and performance
+- Component-based architecture for maintainability
+- Progressive enhancement for accessibility
+
+### Payment Processing
+
+Secure payment processing is implemented using Stripe:
+- PCI-compliant checkout
+- Subscription billing capabilities
+- International payment methods
+- Fraud prevention measures
+
+### Performance Optimization
+
+The platform achieves exceptional performance through:
+- Image optimization and lazy loading
+- Code splitting and tree shaking
+- Service worker for offline capabilities
+- CDN integration for global delivery
+
+## Challenges and Solutions
+
+### Mobile Optimization
+
+**Challenge:** Creating a fully-featured experience that works well on mobile devices.
+
+**Solution:** We adopted a mobile-first design approach and used responsive design patterns throughout. Critical user flows were tested extensively on various devices to ensure usability.
+
+### Performance at Scale
+
+**Challenge:** Maintaining fast load times with large product catalogs.
+
+**Solution:** Implemented virtualized lists, pagination, and efficient data fetching strategies. We also created a caching layer that significantly reduced database load.
+
+## Results
+
+The platform has been adopted by several businesses with impressive results:
+
+- 45% increase in mobile conversions compared to previous solutions
+- 3.2 second average page load time
+- 23% reduction in cart abandonment
+
+## Technologies Used
+
+- **Frontend:** Vue.js, Nuxt, Tailwind CSS
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL
+- **Payment Processing:** Stripe
+- **Hosting:** AWS with CloudFront CDN
+
+This project demonstrates my ability to create complex, user-focused web applications that deliver measurable business results.
+
