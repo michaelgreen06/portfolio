@@ -8,9 +8,24 @@ import type { Project, JournalEntry } from "./types"
 export async function getProjectContent(slug: string): Promise<Project | null> {
   try {
     const filePath = path.join(process.cwd(), "content", "projects", `${slug}.mdx`)
+    console.log(`Attempting to load project content for slug '${slug}' from: ${filePath}`)
+    
+    if (!fs.existsSync(filePath)) {
+      console.warn(`Project file not found for slug: ${slug}`)
+      return null
+    }
+    
+    console.log(`Found file for slug: ${slug}`)
     const fileContent = fs.readFileSync(filePath, "utf8")
 
     const { data, content } = matter(fileContent)
+    
+    console.log(`Successfully parsed frontmatter for ${slug}:`, {
+      title: data.title,
+      date: data.date,
+      type: data.type,
+      contentLength: content.length
+    })
 
     return {
       slug,
@@ -75,8 +90,23 @@ export const getJournalContent = getBlogContent
 export async function getAllProjectSlugs(): Promise<string[]> {
   try {
     const projectsDir = path.join(process.cwd(), "content", "projects")
+    console.log(`Looking for project files in: ${projectsDir}`)
+    
+    if (!fs.existsSync(projectsDir)) {
+      console.warn(`Projects directory doesn't exist: ${projectsDir}`)
+      return []
+    }
+    
     const files = fs.readdirSync(projectsDir)
-    return files.filter((file: string) => file.endsWith(".mdx")).map((file: string) => file.replace(/\.mdx$/, ""))
+    console.log(`Found ${files.length} files in projects directory:`, files)
+    
+    const mdxFiles = files.filter((file: string) => file.endsWith(".mdx"))
+    console.log(`Found ${mdxFiles.length} MDX files:`, mdxFiles)
+    
+    const slugs = mdxFiles.map((file: string) => file.replace(/\.mdx$/, ""))
+    console.log(`Extracted ${slugs.length} project slugs:`, slugs)
+    
+    return slugs
   } catch (error) {
     console.error("Error reading project slugs:", error)
     return []

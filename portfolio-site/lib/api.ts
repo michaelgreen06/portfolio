@@ -1,6 +1,6 @@
 import type { Project, JournalEntry } from "./types"
-import { projects } from "./projects"
-import { getAllBlogSlugs, getBlogContent } from "./mdx"
+import { projects } from "./projects" // Keeping for fallback
+import { getAllBlogSlugs, getBlogContent, getAllProjectSlugs, getProjectContent } from "./mdx"
 
 // Temporary mock data for journal entries
 const mockJournalEntries: JournalEntry[] = [
@@ -39,22 +39,65 @@ const mockJournalEntries: JournalEntry[] = [
 
 // Function to get featured projects
 export async function getFeaturedProjects(limit = 3): Promise<Project[]> {
-  // In a real app, this would fetch from a database or CMS
-  // For now, we'll use the projects from projects.ts
-  return projects.filter((project) => project.featured).slice(0, limit)
+  try {
+    // Get all project slugs
+    const slugs = await getAllProjectSlugs()
+
+    // Get content for each slug
+    const allProjects = await Promise.all(
+      slugs.map(async (slug) => {
+        const project = await getProjectContent(slug)
+        return project
+      })
+    )
+
+    // Filter out null entries, then featured projects, then limit
+    return allProjects
+      .filter((project): project is Project => project !== null)
+      .filter((project) => project.featured)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, limit)
+  } catch (error) {
+    console.error("Error getting featured projects:", error)
+    // Fallback to static data if there's an error
+    return projects.filter((project) => project.featured).slice(0, limit)
+  }
 }
 
 // Function to get all projects
 export async function getAllProjects(): Promise<Project[]> {
-  // In a real app, this would fetch from a database or CMS
-  return projects
+  try {
+    // Get all project slugs
+    const slugs = await getAllProjectSlugs()
+
+    // Get content for each slug
+    const allProjects = await Promise.all(
+      slugs.map(async (slug) => {
+        const project = await getProjectContent(slug)
+        return project
+      })
+    )
+
+    // Filter out null entries and sort by date
+    return allProjects
+      .filter((project): project is Project => project !== null)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  } catch (error) {
+    console.error("Error getting all projects:", error)
+    // Fallback to static data if there's an error
+    return projects
+  }
 }
 
 // Function to get a single project by slug
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
-  // In a real app, this would fetch from a database or CMS
-  const project = projects.find((p) => p.slug === slug)
-  return project || null
+  try {
+    return await getProjectContent(slug)
+  } catch (error) {
+    console.error(`Error getting project for ${slug}:`, error)
+    // Fallback to static data if there's an error
+    return projects.find((p) => p.slug === slug) || null
+  }
 }
 
 // Function to get latest blog entries

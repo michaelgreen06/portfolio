@@ -3,13 +3,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Github, ExternalLink, Calendar } from "lucide-react"
+import { MDXRemote } from "next-mdx-remote/rsc"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
 import { getProjectBySlug } from "@/lib/api"
-import { projects } from "@/lib/projects"
+import { getAllProjectSlugs } from "@/lib/mdx"
 
 interface ProjectPageProps {
   params: {
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
+  const slugs = await getAllProjectSlugs()
+  return slugs.map((slug) => ({
+    slug,
   }))
 }
 
@@ -118,29 +120,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <Separator className="my-8" />
 
-        <div className="space-y-6 animate-fade-in" style={{ animationDelay: "300ms" }}>
-          {/* In a real app, this would be rendered content */}
-          <h2 className="text-2xl font-bold">Project Overview</h2>
-          <p className="text-lg text-muted-foreground">
-            This is where the detailed project content would go. In the future, this would be rendered from content
-            files. For now, we're using placeholder text to demonstrate the layout.
-          </p>
-
-          <h2 className="text-2xl font-bold">Challenges and Solutions</h2>
-          <p className="text-lg text-muted-foreground">
-            Every project comes with its unique set of challenges. Here's how we approached the problems and developed
-            solutions.
-          </p>
-
-          <h2 className="text-2xl font-bold">Technologies Used</h2>
-          <p className="text-lg text-muted-foreground">
-            A deeper dive into the technologies used in this project and why they were chosen.
-          </p>
-
-          <h2 className="text-2xl font-bold">Outcomes and Lessons</h2>
-          <p className="text-lg text-muted-foreground">
-            What was achieved with this project and what lessons were learned along the way.
-          </p>
+        <div className="prose dark:prose-invert max-w-none animate-fade-in" style={{ animationDelay: "300ms" }}>
+          <MDXRemote source={project.content} />
         </div>
       </div>
     </main>
