@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { getFeaturedProjects } from "@/lib/api"
 import { getLatestBlogEntries } from "@/lib/api"
 import BlogEntryCard from "@/components/features/blog/blog-entry-card"
+import TechIcon from "@/components/features/tech/tech-icon"
 
 export default async function Home() {
   // Fetch data for the page
@@ -163,24 +164,7 @@ export default async function Home() {
             <h3 className="text-xl font-semibold">Frontend</h3>
             <div className="grid grid-cols-3 gap-6">
               {techStack.frontend.map((tech) => (
-                <div key={tech.name} className="flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/10 to-indigo-500/10 flex items-center justify-center mb-2 group-hover:from-blue-500/20 group-hover:to-indigo-500/20 transition-all duration-300 hover:scale-110 hover:shadow-md">
-                    <Image
-                      src={tech.logo || "/placeholder.svg"}
-                      alt={tech.name}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                      onError={(e) => {
-                        // Fallback to first letter if image fails to load
-                        e.currentTarget.style.display = "none"
-                        e.currentTarget.parentElement!.innerHTML =
-                          `<span class="text-xl font-bold text-primary">${tech.name.charAt(0)}</span>`
-                      }}
-                    />
-                  </div>
-                  <span className="text-sm">{tech.name}</span>
-                </div>
+                <TechIcon key={tech.name} name={tech.name} logo={tech.logo} />
               ))}
             </div>
           </div>
@@ -189,24 +173,7 @@ export default async function Home() {
             <h3 className="text-xl font-semibold">Backend & Data</h3>
             <div className="grid grid-cols-3 gap-6">
               {techStack.backend.map((tech) => (
-                <div key={tech.name} className="flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/10 to-indigo-500/10 flex items-center justify-center mb-2 group-hover:from-blue-500/20 group-hover:to-indigo-500/20 transition-all duration-300 hover:scale-110 hover:shadow-md">
-                    <Image
-                      src={tech.logo || "/placeholder.svg"}
-                      alt={tech.name}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                      onError={(e) => {
-                        // Fallback to first letter if image fails to load
-                        e.currentTarget.style.display = "none"
-                        e.currentTarget.parentElement!.innerHTML =
-                          `<span class="text-xl font-bold text-primary">${tech.name.charAt(0)}</span>`
-                      }}
-                    />
-                  </div>
-                  <span className="text-sm">{tech.name}</span>
-                </div>
+                <TechIcon key={tech.name} name={tech.name} logo={tech.logo} />
               ))}
             </div>
           </div>
@@ -215,24 +182,7 @@ export default async function Home() {
             <h3 className="text-xl font-semibold">Tools & Other</h3>
             <div className="grid grid-cols-3 gap-6">
               {techStack.tools.map((tech) => (
-                <div key={tech.name} className="flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/10 to-indigo-500/10 flex items-center justify-center mb-2 group-hover:from-blue-500/20 group-hover:to-indigo-500/20 transition-all duration-300 hover:scale-110 hover:shadow-md">
-                    <Image
-                      src={tech.logo || "/placeholder.svg"}
-                      alt={tech.name}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                      onError={(e) => {
-                        // Fallback to first letter if image fails to load
-                        e.currentTarget.style.display = "none"
-                        e.currentTarget.parentElement!.innerHTML =
-                          `<span class="text-xl font-bold text-primary">${tech.name.charAt(0)}</span>`
-                      }}
-                    />
-                  </div>
-                  <span className="text-sm">{tech.name}</span>
-                </div>
+                <TechIcon key={tech.name} name={tech.name} logo={tech.logo} />
               ))}
             </div>
           </div>

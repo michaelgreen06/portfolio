@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { getAllJournalEntries } from "@/lib/api"
-import JournalEntryCard from "@/components/features/journal/journal-entry-card"
+import BlogEntryCard from "@/components/features/blog/blog-entry-card"
 
 export const metadata: Metadata = {
   title: "Journal | Michael Green",
@@ -37,7 +37,7 @@ export default async function JournalPage() {
           <h2 className="text-2xl font-bold mb-6">Learning & Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {entriesByType.learning.map((entry, index) => (
-              <JournalEntryCard key={entry.slug} entry={entry} index={index} />
+              <BlogEntryCard key={entry.slug} entry={entry} index={index} />
             ))}
           </div>
         </section>
@@ -49,7 +49,7 @@ export default async function JournalPage() {
           <h2 className="text-2xl font-bold mb-6">Book Notes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {entriesByType.book.map((entry, index) => (
-              <JournalEntryCard key={entry.slug} entry={entry} index={index} />
+              <BlogEntryCard key={entry.slug} entry={entry} index={index} />
             ))}
           </div>
         </section>
@@ -61,7 +61,7 @@ export default async function JournalPage() {
           <h2 className="text-2xl font-bold mb-6">Project Updates</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {entriesByType.update.map((entry, index) => (
-              <JournalEntryCard key={entry.slug} entry={entry} index={index} />
+              <BlogEntryCard key={entry.slug} entry={entry} index={index} />
             ))}
           </div>
         </section>

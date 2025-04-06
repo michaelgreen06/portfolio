@@ -14,7 +14,7 @@ export interface Project {
 }
 
 // Journal entry type definition
-export interface BlogEntry {
+export interface JournalEntry {
   slug: string
   title: string
   date: string
@@ -24,4 +24,7 @@ export interface BlogEntry {
   tags: string[]
   projects?: string[]
 }
+
+// For backward compatibility
+export type BlogEntry = JournalEntry
 

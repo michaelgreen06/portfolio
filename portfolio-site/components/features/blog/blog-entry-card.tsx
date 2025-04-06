@@ -6,9 +6,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 import type { JournalEntry } from "@/lib/types"
 
-interface JournalEntryCardProps {
+export interface JournalEntryCardProps {
   entry: JournalEntry
   index?: number
+  // Remove key from props as it's handled by React internally
 }
 
 export default function BlogEntryCard({ entry, index = 0 }: JournalEntryCardProps) {
