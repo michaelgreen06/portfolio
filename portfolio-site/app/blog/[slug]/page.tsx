@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Calendar, Tag } from "lucide-react"
+import { MDXRemote } from "next-mdx-remote/rsc"
 
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -86,24 +87,8 @@ export default async function BlogEntryPage({ params }: BlogEntryPageProps) {
 
           <Separator className="my-8" />
 
-          <div className="animate-fade-in space-y-6" style={{ animationDelay: "200ms" }}>
-            {/* In a real app, this would be rendered content */}
-            <h2 className="text-2xl font-bold">Introduction</h2>
-            <p className="text-lg text-muted-foreground">
-              This is where the detailed blog entry content would go. In the future, this would be rendered from content
-              files. For now, we&apos;re using placeholder text to demonstrate the layout.
-            </p>
-
-            <h2 className="text-2xl font-bold">Main Content</h2>
-            <p className="text-lg text-muted-foreground">
-              The main content of the blog entry would be here, with proper formatting, code blocks, images, and other
-              features.
-            </p>
-
-            <h2 className="text-2xl font-bold">Conclusion</h2>
-            <p className="text-lg text-muted-foreground">
-              Wrapping up the blog entry with some concluding thoughts and takeaways.
-            </p>
+          <div className="animate-fade-in prose dark:prose-invert max-w-none" style={{ animationDelay: "200ms" }}>
+            <MDXRemote source={entry.content} />
           </div>
         </article>
       </div>

@@ -32,13 +32,21 @@ export async function getProjectContent(slug: string): Promise<Project | null> {
 }
 
 export async function getBlogContent(slug: string): Promise<JournalEntry | null> {
-  // Try the blog directory first, then fall back to journal for backward compatibility
   try {
-    // Try blog directory first
     const blogFilePath = path.join(process.cwd(), "content", "blog", `${slug}.mdx`)
+    console.log(`Attempting to load blog content for slug '${slug}' from: ${blogFilePath}`)
+    
     if (fs.existsSync(blogFilePath)) {
+      console.log(`Found file for slug: ${slug}`)
       const fileContent = fs.readFileSync(blogFilePath, "utf8")
       const { data, content } = matter(fileContent)
+      
+      console.log(`Successfully parsed frontmatter for ${slug}:`, {
+        title: data.title,
+        date: data.date,
+        type: data.type,
+        contentLength: content.length
+      })
 
       return {
         slug,
@@ -52,25 +60,7 @@ export async function getBlogContent(slug: string): Promise<JournalEntry | null>
       }
     }
 
-    // If not found in blog, try journal directory
-    const journalFilePath = path.join(process.cwd(), "content", "journal", `${slug}.mdx`)
-    if (fs.existsSync(journalFilePath)) {
-      const fileContent = fs.readFileSync(journalFilePath, "utf8")
-      const { data, content } = matter(fileContent)
-
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        excerpt: data.excerpt,
-        content,
-        type: data.type,
-        tags: data.tags || [],
-        projects: data.projects,
-      }
-    }
-
-    console.error(`File not found for slug ${slug} in either blog or journal directories`)
+    console.error(`File not found for slug ${slug} in blog directory: ${blogFilePath}`)
     return null
   } catch (error) {
     console.error(`Error reading blog content for ${slug}:`, error)
@@ -96,35 +86,24 @@ export async function getAllProjectSlugs(): Promise<string[]> {
 // Function to get all blog slugs
 export async function getAllBlogSlugs(): Promise<string[]> {
   try {
-    const blogSlugs: Set<string> = new Set()
+    const blogDir = path.join(process.cwd(), "content", "blog")
+    console.log(`Looking for blog files in: ${blogDir}`)
     
-    // Try blog directory
-    try {
-      const blogDir = path.join(process.cwd(), "content", "blog")
-      if (fs.existsSync(blogDir)) {
-        const files = fs.readdirSync(blogDir)
-        files
-          .filter((file) => file.endsWith(".mdx"))
-          .forEach((file) => blogSlugs.add(file.replace(/\.mdx$/, "")))
-      }
-    } catch (blogError) {
-      console.error("Error reading from blog directory:", blogError)
+    if (fs.existsSync(blogDir)) {
+      const files = fs.readdirSync(blogDir)
+      console.log(`Found ${files.length} files in blog directory:`, files)
+      
+      const mdxFiles = files.filter((file) => file.endsWith(".mdx"))
+      console.log(`Found ${mdxFiles.length} MDX files:`, mdxFiles)
+      
+      const slugs = mdxFiles.map((file) => file.replace(/\.mdx$/, ""))
+      console.log(`Extracted ${slugs.length} slugs:`, slugs)
+      
+      return slugs
+    } else {
+      console.log(`Blog directory does not exist: ${blogDir}`)
     }
-    
-    // Try journal directory for backward compatibility
-    try {
-      const journalDir = path.join(process.cwd(), "content", "journal")
-      if (fs.existsSync(journalDir)) {
-        const files = fs.readdirSync(journalDir)
-        files
-          .filter((file) => file.endsWith(".mdx"))
-          .forEach((file) => blogSlugs.add(file.replace(/\.mdx$/, "")))
-      }
-    } catch (journalError) {
-      console.error("Error reading from journal directory:", journalError)
-    }
-    
-    return Array.from(blogSlugs)
+    return []
   } catch (error) {
     console.error("Error reading blog slugs:", error)
     return []
