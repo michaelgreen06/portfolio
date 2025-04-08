@@ -15,6 +15,15 @@ Here are a few things that help me stand out:
 - i am very efficient and focus on the most effective tasks constantly utilizing the 80/20 principle to decide what i should focus on while also getting frequent feedback to determine if I am actually focusing on the right things (build measure learn)
 - I am very focused on using technology as a force for good and creating things that benefit humnas through technology rather than extracting from them like many current technologies like social media do. 
 
+q&a
+b) How do you feel about featuring your cannabis-dispenser product in your portfolio? Some companies might not mind, but others might—so do you want to spotlight it (because it strongly illustrates your 0→1 skill) or briefly mention it only?
+b i am happy to talk about my cannabis product as it's unavoidable since it's the thing I've been doing for over 9 years
+
+c) Are you open to working with companies specifically focused on sustainability or environmental impact, or are you aiming for a more general audience but including your sustainability mindset as a value-add?
+c i am targeting a general audience in the tech industry. They don't need to be focused on sustainability or environmental impact at all.
+
+d) What kind of roles or projects are you most interested in attracting—full-stack software, product development, operations, or a blend?
+d any and all of these
 
 I graduated from college in 2011 w/ a degree in chemical engineering w/ an emphasis in sustainable energy engineering. I had to take a few courses related to sustainability and they have really impacted the way I think about things /view the world. I am always thinking about the environmental impact of my decisions (often to a fault :laughing_emoji). 
 
@@ -43,3 +52,5 @@ git, postman, docker, graphql, windsurf, npm
 
 I want to portray myself as a general builder who can easily use available technologies to solve a wide range of problems
 I don't want to be to focuse on sustainability as it's a bit of a polarizing topic these days. 
+
+ I  want you to help me w/ specific things like distilling this all down into a single sentence that I can use on the top of my website and linked in profile. I also want you to craft a full narrative for my about me page on my portfolio site. I also want a 2-3 sentence about me summary to put at the bottom page of my portfolio site landing page. Please write all of these for me. please also write a cta for the get in touch section at the bottom of the landing page of my portfolio site. I also want you to create a single sentence for the footer of the whole portfolio site.
