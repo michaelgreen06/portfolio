@@ -1,5 +1,7 @@
 My Skills
-I am transitioning careers and need help creating a unified narrative that showcases all of my unique skills to help me stand out as someone companies would love to hire/work with. 
+I am transitioning careers and need help creating a unified narrative that showcases all of my unique skills to help me stand out as someone companies would love to hire/work with. I want to sell myself as someone who can help solve big problems using digital tools to build world class digital products (websites, apps, automations etc)
+
+I am transitioning from physical products to digital products. I have limited experience building digital products but am constantly building digital products as often as possible now and am using all the newly available cutting edge tools to help me create meaningful products w/ minimal effort. I can now create things that only senior engineers would previously be able to create. My ever increasing knowledge of software development helps me build things more effectively than the average "vibe coder" because I understand foundationally what is happening so I can address issues when they arise instead of relying on the tools to solve all the problems which currently doesn't work very well. 
 
 I am going to use this narrative to update my online presence primarily on my portfolio website.
 
@@ -11,6 +13,8 @@ Here are a few things that help me stand out:
 - I follow the lean startup methodology of build measure learn. 
 -  have good ideas of products to build that solve my own problems and focus on problems that other people have so the products are in demand. 
 - i am very efficient and focus on the most effective tasks constantly utilizing the 80/20 principle to decide what i should focus on while also getting frequent feedback to determine if I am actually focusing on the right things (build measure learn)
+- I am very focused on using technology as a force for good and creating things that benefit humnas through technology rather than extracting from them like many current technologies like social media do. 
+
 
 I graduated from college in 2011 w/ a degree in chemical engineering w/ an emphasis in sustainable energy engineering. I had to take a few courses related to sustainability and they have really impacted the way I think about things /view the world. I am always thinking about the environmental impact of my decisions (often to a fault :laughing_emoji). 
 
@@ -18,9 +22,9 @@ I worked in a cannabis dispensary from 2011 to 2016 doing operations and helped 
 
 I have been working on software products for the last few years. I have taken a coding bootcamp online in 2021 then re-did it in 2024. I have made a few projects for hackathons. I worked for an organization doing operations then briefly did some software development for them. 
 I just recently completed a project called wetbulb35.com which shows the wetbulb temperature for any location on earth. I’ve contributed to the following projects recently:
-Cookie jar, trin desktop, eliza os framework and a few others
+Cookie jar (decentralized petty cash drawer for web3 orgs), trin etheruem clidnt desktop ui, eliza os ai agent framework and a few others
 
-I also started a coworking space with some friends last summer. It is unique because we don't have any staff, we are the staff. we run it as a self operating system which is very uncommon in the world of coworking spaces. 
+I also started a coworking space with some friends last summer (regenhub.xyz). It is unique because we don't have any staff, we are the staff. we run it as a self operating system which is very uncommon in the world of coworking spaces. 
 
 I have been into personal development/self growth since I started college. I was introduced to the GTD method in 2008 and have been implementing it in various ways ever since. It keeps me very organized and helps me be efficient. I am currently very obsessed w/ the idea of deep work taught by cal Newport in his book deep work and have been practicing to deepen my focus and live in a state of focus and take breaks for distraction instead of the other way around since 2019. I loved greg mcewens book essentialism and try to ruthlessly focus on what is essential and constantly apply the 80/20 analysis so I am working on the things that are the most important so I can be as effective as possible. Everyone who knows me tells me I am one of the most disciplined people they know. I have a very structured and organized life w/ very solid routines. I go to bed at 9pm wake up at 5am meditate for 30 min then exercise for 60 then I shower eat and get to work early. I have all of my notifications off so that I am not distracted. I don’t use social media. I usually am able to avoid checking my phone throughout the day. When I work I focus on one thing and focus on it for 2-3 hrs and don’t do anything distracting like checking emails / messages etc.
 
@@ -36,3 +40,6 @@ BE
 node, express, postgresql, rest api, Scaffold eth, python
 other tools
 git, postman, docker, graphql, windsurf, npm
+
+I want to portray myself as a general builder who can easily use available technologies to solve a wide range of problems
+I don't want to be to focuse on sustainability as it's a bit of a polarizing topic these days. 
