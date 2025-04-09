@@ -49,7 +49,7 @@ export default async function ProjectsPage() {
             Projects that showcase my product design experience and entrepreneurial background.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {physicalProjects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}

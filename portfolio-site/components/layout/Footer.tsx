@@ -67,7 +67,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="https://github.com/yourusername"
+                  href="https://github.com/michaelgreen06"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/michaelgreen2"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -87,7 +87,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="mailto:email@gmail.com"
+                  href="mailto:mgdevstuff@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
                 >
                   <Mail className="h-4 w-4 mr-2" /> Email
