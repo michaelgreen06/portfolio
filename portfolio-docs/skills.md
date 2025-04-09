@@ -42,6 +42,8 @@ I know I would be an amazing asset to any team but I just don’t know how to se
 
 Please help me tell my story in a way that can portray my skills and all the value I can add to a company or a client. Please ask any clarifying questions as needed. 
 
+I've been in the blockchain space since 2017 and have contributed to reputable projects in the space like gitcoin (2021-2023)
+
 Frameworks/tools
 FE
 react, next.js, typescript, javascript, vue, tailwind css
