@@ -87,7 +87,7 @@ export default async function Home() {
             <div className="animate-slide-up">
               <h2 className="text-3xl font-bold tracking-tight mb-4 gradient-text">Featured Projects</h2>
               <p className="text-muted-foreground max-w-2xl">
-                A selection of my recent work across climate tech, e-commerce, and web applications.
+                A selection of my recent work.
               </p>
             </div>
             <Button variant="ghost" className="mt-4 md:mt-0 animate-fade-in" asChild>
