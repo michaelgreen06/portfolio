@@ -140,17 +140,6 @@ export default function ContactPage() {
                 </Link>
               </CardContent>
             </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <MapPin className="mr-2 h-5 w-5 text-primary" /> Location
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Boulder, Colorado</p>
-              </CardContent>
-            </Card>
           </div>
         </div>
 
