@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator"
 
 export const metadata: Metadata = {
   title: "About | Michael Green",
-  description: "Learn more about Michael Green, a frontend developer focused on climate tech and social impact.",
+  description: "Learn more about Michael Green, a Full Stack Developer & Product Builder.",
 }
 
 export default function AboutPage() {
@@ -47,83 +47,83 @@ export default function AboutPage() {
 
           <div className="md:col-span-2 space-y-8 animate-slide-up" style={{ animationDelay: "200ms" }}>
             <section>
-              <h2 className="text-2xl font-bold mb-4">My Story</h2>
-              <p className="text-lg text-muted-foreground mb-4">
-                I&apos;m a frontend developer with a passion for building user-centered digital experiences. With a
-                background in e-commerce and a focus on climate tech, I bring a unique perspective to every project I
-                work on.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                My journey into web development began over 5 years ago when I was working in retail and saw firsthand
-                how digital transformation was changing the industry. Fascinated by the potential of technology to solve
-                real-world problems, I taught myself to code and quickly fell in love with the creative and technical
-                aspects of frontend development.
+              <h2 className="text-2xl font-bold mb-4">Full Stack Developer & Product Builder</h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                I&apos;m a Full Stack Developer driven by the challenge of transforming complex problems into effective digital solutions. My journey began in Chemical Engineering and led me to successfully build and scale a physical product business from the ground up (0-to-1). Now, I apply that same entrepreneurial grit, analytical mindset, and a deliberately cultivated deep focus to building robust, user-centric websites, applications, and automations with modern technologies.
               </p>
             </section>
 
             <Separator />
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">My Approach</h2>
+              <h2 className="text-2xl font-bold mb-4">From Physical Products to Digital Solutions</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                I believe that the best digital products are those that seamlessly blend form and function. My approach
-                combines technical expertise with a deep understanding of user needs, resulting in applications that are
-                both powerful and intuitive to use.
+              My transition into software development is built on a proven foundation of real-world product creation. I founded Simpacti, the company behind packNpuff, over nine years ago and have been running it ever since. packNpuff is a product I designed to address a specific need in the cannabis accessory market. This venture has been a comprehensive lesson in the entire product lifecycle: identifying a user pain point (inefficiently making smaller joints), engineering a novel solution, navigating manufacturing, adapting my strategy from B2B to a successful B2C model on Amazon (achieving 4.5 stars with 930+ reviews), and managing all aspects of the business. I learned firsthand the importance of user empathy, iterative development based on feedback (Build-Measure-Learn), resilience in overcoming obstacles, and operational efficiency – even incorporating sustainable practices like plant-based materials and recycled packaging. 
               </p>
-              <p className="text-lg text-muted-foreground">When working on a project, I focus on:</p>
-              <ul className="list-disc list-inside text-lg text-muted-foreground space-y-2 mt-4">
-                <li>Understanding the core problem before jumping to solutions</li>
-                <li>Creating accessible and inclusive user experiences</li>
-                <li>Writing clean, maintainable code that stands the test of time</li>
-                <li>Continuously learning and adapting to new technologies and best practices</li>
+            </section>
+
+            <Separator />
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">My Engineering & Technical Approach</h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                My Chemical Engineering background provides a strong foundation in analytical thinking, problem-solving, and understanding systems – principles I now apply to software architecture and development. Recognizing the power of digital tools, I&apos;ve immersed myself in modern web technologies through intensive bootcamps and continuous self-study, rapidly acquiring proficiency in frameworks like React, Next.js, Node.js, and database management with PostgreSQL.
+              </p>
+              <p className="text-lg text-muted-foreground mb-4">
+                Crucially, my engineering mindset drives me to understand the fundamentals behind the tools I use. This allows me to move beyond surface-level implementation, troubleshoot effectively when challenges arise, and build more resilient and scalable solutions. I actively leverage cutting-edge tools, including AI assistants, to enhance my workflow and build sophisticated features efficiently. My approach is grounded in lean principles: identifying the core problem, building iteratively, measuring results, and focusing relentlessly on delivering value (applying the 80/20 principle).
+              </p>
+            </section>
+
+            <Separator />
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Focus & Efficiency: My Way of Working</h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                In a world of constant distraction, I&apos;ve intentionally cultivated the ability to focus deeply and work efficiently. Inspired by concepts from Deep Work, Essentialism, and Getting Things Done, I structure my days for sustained concentration, minimize distractions and dedicate focused blocks of time to complex tasks. This discipline isn&apos;t just a personal habit; it&apos;s a professional asset that enables me to learn quickly, produce high-quality results, solve difficult problems, and reliably deliver results for any team I join.
+              </p>
+            </section>
+
+            <Separator />
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Recent Projects & Contributions</h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                I&apos;m constantly building and contributing to solidify my skills and explore new technologies:
+              </p>
+              <ul className="list-disc list-inside text-lg text-muted-foreground space-y-4 mt-4">
+                <li>
+                  <span className="font-medium">Wetbulb35.com:</span> An independently developed full-stack application providing global wet-bulb temperature data, showcasing API integration, data visualization, and deployment.
+                </li>
+                <li>
+                  <span className="font-medium">Open Source Contributions:</span> Actively contributed to projects like Cookie Jar (Web3 Petty Cash), Trin Ethereum Client UI, and Eliza OS (AI Agent Framework), gaining experience in collaborative development and diverse codebases.
+                </li>
+                <li>
+                  <span className="font-medium">RegenHub.xyz:</span> Co-founded and helped establish the operational systems for a unique, self-managed coworking space, demonstrating skills in automation and process design.
+                </li>
               </ul>
-            </section>
-
-            <Separator />
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Professional Experience</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold">Senior Frontend Developer</h3>
-                  <p className="text-muted-foreground">Climate Tech Startup • 2021 - Present</p>
-                  <p className="mt-2">
-                    Leading frontend development for climate monitoring and risk assessment tools. Implemented data
-                    visualization dashboards and interactive maps using React, TypeScript, and D3.js.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold">Frontend Developer</h3>
-                  <p className="text-muted-foreground">E-commerce Agency • 2018 - 2021</p>
-                  <p className="mt-2">
-                    Developed custom e-commerce solutions for retail clients. Created responsive interfaces, product
-                    configurators, and checkout flows using Vue.js and Nuxt.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold">Web Developer</h3>
-                  <p className="text-muted-foreground">Digital Marketing Agency • 2016 - 2018</p>
-                  <p className="mt-2">
-                    Built marketing websites and landing pages for clients across various industries. Focused on
-                    performance optimization and SEO best practices.
-                  </p>
-                </div>
+              <div className="mt-6">
+                <Button variant="outline" className="w-full md:w-auto" asChild>
+                  <Link href="/projects" scroll={true}>
+                    View My Projects <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </section>
 
             <Separator />
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">Beyond Coding</h2>
-              <p className="text-lg text-muted-foreground mb-4">When I&apos;m not coding, you can find me:</p>
-              <ul className="list-disc list-inside text-lg text-muted-foreground space-y-2">
-                <li>Hiking in the mountains and exploring nature</li>
-                <li>Reading books on design, psychology, and climate science</li>
-                <li>Volunteering with local environmental organizations</li>
-                <li>Experimenting with sustainable cooking recipes</li>
-              </ul>
+              <h2 className="text-2xl font-bold mb-4">What I&apos;m Looking For</h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                I am actively seeking Full Stack Developer roles where I can leverage my unique blend of technical skills, product development experience, and focused work ethic. I thrive on tackling challenging problems, collaborating with driven teams, and building digital products that provide tangible value.
+              </p>
+              <div className="mt-6">
+                <Button className="w-full md:w-auto" asChild>
+                  <Link href="/contact" scroll={true}>
+                    Contact Me <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </section>
           </div>
         </div>
