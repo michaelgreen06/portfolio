@@ -11,7 +11,7 @@ export default function Footer() {
               Michael Green
             </Link>
             <p className="mt-2 text-muted-foreground">
-              Building thoughtful digital experiences with a focus on climate tech and social impact.
+            Leveraging an engineering mindset and proven 0-to-1 product experience to build impactful digital solutions.
             </p>
           </div>
 

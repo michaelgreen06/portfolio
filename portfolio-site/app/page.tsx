@@ -53,12 +53,11 @@ export default async function Home() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
               Michael Green
               <span className="block text-2xl md:text-3xl font-medium text-muted-foreground mt-2">
-                Frontend Developer
+                Full Stack Developer
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Building thoughtful digital experiences with a focus on climate tech and social impact.
-            </p>
+          Leveraging an engineering mindset and proven 0-to-1 product experience to build impactful digital solutions. </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md" asChild>
                 <Link href="/projects">
@@ -230,9 +229,7 @@ export default async function Home() {
           <div className="md:w-2/3 space-y-6 animate-slide-up">
             <h2 className="text-3xl font-bold tracking-tight gradient-text">About Me</h2>
             <p className="text-lg text-muted-foreground">
-              I&apos;m a frontend developer with a passion for building user-centered digital experiences. With a
-              background in e-commerce and a focus on climate tech, I bring a unique perspective to every project I work
-              on.
+              I&apos;m a Full Stack Developer bringing a unique perspective from successfully founding and scaling a physical product business (0-to-1). My approach combines an engineer&apos;s analytical rigor with deep focus and modern development practices to build effective, user-centered software solutions. I thrive on translating complex challenges into valuable digital products.
             </p>
             <p className="text-lg text-muted-foreground">
               My approach combines technical expertise with a deep understanding of user needs, resulting in
@@ -254,8 +251,7 @@ export default async function Home() {
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 text-center animate-fade-in">
-            Interested in working together? Have a question about one of my projects? I&apos;d love to hear from you.
-          </p>
+          Whether you&apos;re seeking a developer for your next project, have questions about my work, or simply want to connect, I&apos;m always open to interesting conversations and opportunities. </p>
 
           <div className="flex justify-center animate-fade-in" style={{ animationDelay: "100ms" }}>
             <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md" asChild>

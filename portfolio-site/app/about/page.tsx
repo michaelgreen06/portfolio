@@ -95,7 +95,7 @@ export default function AboutPage() {
                   <span className="font-medium">Wetbulb35.com:</span> An independently developed full-stack application providing global wet-bulb temperature data, showcasing API integration, data visualization, and deployment.
                 </li>
                 <li>
-                  <span className="font-medium">Open Source Contributions:</span> Actively contributed to projects like Cookie Jar (Web3 Petty Cash), Trin Ethereum Client UI, and Eliza OS (AI Agent Framework), gaining experience in collaborative development and diverse codebases.
+                  <span className="font-medium">Web3 Contributions:</span> Actively contributed to projects like Cookie Jar (Web3 Petty Cash Drawer), Trin Ethereum Client UI, and Eliza OS (AI Agent Framework), gaining experience in collaborative development and diverse codebases.
                 </li>
                 <li>
                   <span className="font-medium">RegenHub.xyz:</span> Co-founded and helped establish the operational systems for a unique, self-managed coworking space, demonstrating skills in automation and process design.
@@ -104,7 +104,7 @@ export default function AboutPage() {
               <div className="mt-6">
                 <Button variant="outline" className="w-full md:w-auto" asChild>
                   <Link href="/projects" scroll={true}>
-                    View My Projects <ArrowRight className="ml-2 h-4 w-4" />
+                    View More Projects <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>

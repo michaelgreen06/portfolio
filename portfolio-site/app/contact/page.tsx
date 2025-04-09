@@ -17,7 +17,7 @@ export default function ContactPage() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 gradient-text animate-slide-up">Contact Me</h1>
         <p className="text-xl text-muted-foreground mb-12 animate-fade-in">
-          Interested in working together? Have a question about one of my projects? I&apos;d love to hear from you.
+        Interested in collaborating or have a question about one of my projects? Don&apos;t hesitate to reach out - I&apos;d love to hear from you.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
