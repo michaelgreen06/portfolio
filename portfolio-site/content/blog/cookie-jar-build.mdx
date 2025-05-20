@@ -1,0 +1,144 @@
+---
+title: "Building CookieJar – A Technical Journey"
+date: "2025-05-20"
+excerpt: "A deep dive into building a user-friendly decentralized petty cash system for Web3 organizations"
+type: "learning"
+tags: ["Web3", "Smart Contracts", "React", "TypeScript", "Wagmi", "Multi-chain"]
+---
+
+# Building CookieJar – A Technical Journey
+
+*From spaghetti code to production-ready application: lessons from the trenches of Web3 development*
+
+## Introduction
+
+CookieJar is a blockchain-based solution designed as a digital petty cash drawer for online organizations operating in high-trust environments. The concept originated at Raid Guild several years ago, with multiple attempts to bring it to life, but none resulted in a consumer-ready product. When I joined the project, the mission was clear: create an MVP that worked across multiple chains, supported ERC20 tokens and ETH, provided a user-friendly experience, and implemented a sustainable 1% fee revenue model.
+
+This post documents my technical journey in transforming this vision into reality, highlighting the challenges faced and lessons learned along the way. I'm sharing this both as a reflection on my process and as a potential resource for those working on similar Web3 projects.
+
+## Project Background & Objectives
+
+The CookieJar concept has a rich history:
+
+1. **Previous Iterations**: Earlier versions at Raid Guild were either over-engineered or abandoned when funding ran out.
+
+2. **Market Gap**: While Gitcoin/Allo Capital created their own version, it required technical skills to implement, limiting adoption.
+
+3. **Our Mission**: Build CookieJar V3 as a true MVP with:
+   - Multi-chain support
+   - Native ETH and ERC20 token compatibility
+   - User-friendly interface for non-technical users
+   - Sustainable revenue model (1% fee on deposits)
+
+With significant interest generated during the Allo Summoning at ETHDenver, we had a narrow window to capitalize on community excitement. This created an interesting technical challenge: balance rapid development with a quality product that users would actually adopt.
+
+## Inheriting Legacy Code: The Good, the Bad, and the Spaghetti
+
+When I joined the project, the expectation was that I would primarily focus on UX implementation over existing smart contracts with a minimal frontend. The reality was quite different. The codebase I inherited was:
+
+- **Incomplete**: Smart contracts were developed in parallel with a frontend that wasn't aligned with our specifications
+- **Poorly Structured**: Spaghetti code with numerous unused files and incomplete features
+- **Inconsistent**: Display values hardcoded into components rather than using theme variables
+- **Limited**: Only configured for ETH on a single chain with hardcoded values
+
+This presented a significant challenge. After missing our first launch deadline, we took over the codebase entirely and began the process of transformation.
+
+
+## Technical Implementation Challenges
+
+### Smart Contract Architecture Decisions
+
+The initial design used on-chain data storage through a registry contract rather than indexing events. While indexing would have been the preferred approach from a technical standpoint, we made a strategic decision to stick with the existing architecture. We eliminated the unnecessary registry contract and simply read/write directly to the factory contract.
+
+This trade-off simplified our approach while still meeting the core requirements for the MVP. The decision was pragmatic – delivering a working product quickly was more important than architectural perfection.
+
+### Wagmi Hooks: Power and Pitfalls
+
+One of my significant learnings was maximizing the potential of Wagmi hooks for smart contract interaction. The codebase came with Wagmi hooks but lacked proper configuration:
+
+1. I implemented a proper `wagmi.config` file to regenerate hooks for our updated contracts
+2. Discovered the value of integrating package documentation directly into the codebase for better AI-assisted development
+
+This approach improved code quality while accelerating development speed.
+
+
+
+### Multi-chain and Multi-token Support
+
+Expanding beyond the initial single-chain, ETH-only implementation required significant refactoring:
+
+1. Replaced hardcoded chain values with configurable network options
+2. Implemented token detection and dynamic display of token symbols and decimals
+3. Created a more user-friendly interface where users could enter amounts in tokens rather than needing to know the token decimals for the token they were using
+
+This transformation made the application significantly more accessible and useful.
+## Testing and Deployment
+
+Extensive testing before production deployment revealed critical issues:
+
+1. **Fee Calculation Error**: The contract was taking a 0.01% fee instead of the intended 1%
+2. **UI-Contract Mismatch**: Emergency withdrawal functionality wasn't properly connected in the UI
+
+These discoveries reinforced the importance of thorough testing at the integration level, particularly when dealing with financial applications.
+
+The deployment process taught me valuable lessons about factory contract deployment across chains. Here's the script I used for deployment on `base-sepolia`:
+
+```bash
+source .env && forge script script/Deploy.s.sol:Deploy \
+  --via-ir \
+  --rpc-url $BASE_SEPOLIA_URL \
+  --broadcast \
+  --verify \
+  --etherscan-api-key $BASE_ETHERSCAN_KEY \
+  --verifier-url https://api-sepolia.basescan.org/api \
+  --chain-id 84532 \
+  -vvvv
+```
+
+## Product Leadership
+
+Beyond technical implementation, I found myself in a product leadership role:
+
+1. Creating and prioritizing issues based on MVP requirements (that I defined)
+2. Making critical product decisions about what features to include or exclude
+3. Constantly evaluating features against our core goal of user-friendliness
+
+This experience reinforced the importance of maintaining focus on core user needs rather than getting lost in technical possibilities. For example, I chose to implement an admin filter on the jars overview page rather than a separate profile page to maintain simplicity in the user experience.
+
+## Future Improvements
+
+Looking forward, several enhancements would improve the product:
+
+1. **Cross-chain Visibility**: Show all jars a user is eligible for on one page without requiring network switching
+2. **Whitelist Management**: Add whitelist functionality during jar creation to improve UX
+3. **Architecture Refactoring**: For significant UX improvements, a clean-slate rebuild would be more efficient than refactoring the current codebase
+
+## Lessons Learned
+
+### Documentation Integration for AI-assisted Development
+
+Integrating package documentation directly into the development environment significantly improved the quality of AI-assisted code generation. Though managing these files required some workarounds (adding to .gitignore but temporarily removing when needed), the productivity boost was substantial.
+
+### Project Recovery Strategies
+
+Taking over a troubled project taught me valuable lessons about assessment, prioritization, and execution:
+
+1. **Ruthless Prioritization**: Identify and focus on only what's needed for a viable MVP
+2. **Strategic Technical Debt**: Recognize when perfect architecture can be sacrificed for speed
+3. **Communication**: Maintain transparent communication about challenges and progress
+
+### Lean Canvas Approach for Future Work
+
+Moving forward, if I continue working on this project, I would apply the Lean Canvas / Running Lean framework to evaluate capital allocation problems more effectively. This would ensure we're solving the right problems rather than falling in love with the cookie jar solution.
+
+## Conclusion
+
+Building CookieJar V3 was an intense technical journey that went far beyond the initial scope of UX implementation. It required making pragmatic technical decisions, taking on product leadership responsibilities, and balancing architectural preferences with market realities.
+
+The project transformed from a single-chain, ETH-only application with an inconsistent codebase to a multi-chain, multi-token platform with a user-friendly interface and sustainable revenue model. Despite the challenges, the experience provided invaluable lessons in both technical implementation and product development in the Web3 space.
+
+If you'd like to see the final product, visit [cookiejar.wtf](https://cookiejar.wtf) – I welcome your feedback and would be happy to discuss any aspects of the development process in more detail.
+
+---
+
+*This project was built using React, TypeScript, Wagmi hooks, and Solidity smart contracts deployed across multiple EVM-compatible chains.*
