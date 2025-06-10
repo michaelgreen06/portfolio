@@ -22,21 +22,23 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       className="overflow-hidden flex flex-col h-full hover-card-effect animate-fade-in"
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      <div className="aspect-video relative overflow-hidden">
-        <Image
-          src={project.imageUrl || "/placeholder.svg?height=400&width=600"}
-          alt={project.title}
-          fill
-          className="object-cover image-hover-effect"
-        />
-        {project.featured && (
-          <div className="absolute top-2 right-2">
-            <Badge variant="secondary" className="bg-primary text-primary-foreground">
-              Featured
-            </Badge>
-          </div>
-        )}
-      </div>
+      <Link href={`/projects/${project.slug}`} className="block">
+        <div className="aspect-video relative overflow-hidden cursor-pointer">
+          <Image
+            src={project.imageUrl || "/placeholder.svg?height=400&width=600"}
+            alt={project.title}
+            fill
+            className="object-cover image-hover-effect transition-transform duration-300 hover:scale-105"
+          />
+          {project.featured && (
+            <div className="absolute top-2 right-2">
+              <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                Featured
+              </Badge>
+            </div>
+          )}
+        </div>
+      </Link>
       <CardHeader>
         <CardTitle className="text-xl">{project.title}</CardTitle>
         <CardDescription>{project.description}</CardDescription>
