@@ -23,6 +23,7 @@ export interface JournalEntry {
   type: "update" | "book" | "learning"
   tags: string[]
   projects?: string[]
+  imageUrl?: string
 }
 
 // For backward compatibility

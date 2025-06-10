@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -18,9 +19,21 @@ export default function BlogEntryCard({ entry, index = 0 }: JournalEntryCardProp
 
   return (
     <Card
-      className="flex flex-col h-full hover-card-effect animate-fade-in"
+      className="overflow-hidden flex flex-col h-full hover-card-effect animate-fade-in"
       style={{ animationDelay: `${index * 100}ms` }}
     >
+      {entry.imageUrl && (
+        <Link href={`/blog/${entry.slug}`} className="block">
+          <div className="aspect-video relative overflow-hidden cursor-pointer">
+            <Image
+              src={entry.imageUrl}
+              alt={entry.title}
+              fill
+              className="object-cover image-hover-effect transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        </Link>
+      )}
       <CardHeader>
         <div className="flex items-center gap-2 mb-2">
           {entry.tags.slice(0, 2).map((tag) => (
