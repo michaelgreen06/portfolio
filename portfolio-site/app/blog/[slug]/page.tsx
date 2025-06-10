@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Calendar, Tag } from "lucide-react"
@@ -84,6 +85,21 @@ export default async function BlogEntryPage({ params }: BlogEntryPageProps) {
 
             <p className="text-xl text-muted-foreground">{entry.excerpt}</p>
           </header>
+
+          {entry.imageUrl && (
+            <div
+              className="aspect-video relative rounded-lg overflow-hidden mb-12 shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: "200ms" }}
+            >
+              <Image
+                src={entry.imageUrl}
+                alt={entry.title}
+                fill
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                priority
+              />
+            </div>
+          )}
 
           <Separator className="my-8" />
 

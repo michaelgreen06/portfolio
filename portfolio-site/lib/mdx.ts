@@ -72,6 +72,7 @@ export async function getBlogContent(slug: string): Promise<JournalEntry | null>
         type: data.type,
         tags: data.tags || [],
         projects: data.projects,
+        imageUrl: data.imageUrl,
       }
     }
 
