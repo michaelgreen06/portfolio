@@ -24,14 +24,14 @@ export default function BottomCTASection({
     return null
   }
 
-  const defaultDescription = `Experience ${title} firsthand and see how it can make a difference in your workflow.`
+  const defaultDescription = `Ready to see ${title} in action?`
   const defaultCtaText = `Visit ${title}`
 
   return (
     <>
       <Separator className="my-12" />
       <div className="text-center py-12 animate-fade-in" style={{ animationDelay }}>
-        <h3 className="text-2xl font-bold mb-4 gradient-text">Ready to explore?</h3>
+        <h3 className="text-2xl font-bold mb-4 gradient-text">See for yourself!</h3>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
           {description || defaultDescription}
         </p>

@@ -1,6 +1,7 @@
 import type { Project, JournalEntry } from "@/lib/types"
 import ProjectCard from "@/components/features/projects/project-card"
 import BlogEntryCard from "@/components/features/blog/blog-entry-card"
+import { Separator } from "@/components/ui/separator"
 
 interface RelatedContentSectionProps {
   relatedContent: (Project | JournalEntry)[]
@@ -20,6 +21,8 @@ export default function RelatedContentSection({ relatedContent }: RelatedContent
   }
 
   return (
+    <>
+    <Separator className="my-12" />
     <section className="mt-16 animate-fade-in" style={{ animationDelay: "400ms" }}>
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4 gradient-text">Related Content</h2>
@@ -39,5 +42,6 @@ export default function RelatedContentSection({ relatedContent }: RelatedContent
         })}
       </div>
     </section>
+    </>
   )
 } 

@@ -124,8 +124,7 @@ export default async function BlogEntryPage({ params }: BlogEntryPageProps) {
           <BottomCTASection 
             title={relatedProject.title}
             url={relatedProject.liveUrl}
-            ctaText={`Try ${relatedProject.title}`}
-            description={`Ready to see the project I wrote about in action? ${relatedProject.description}`}
+            description={`Ready to see ${relatedProject.title} in action?`}
             animationDelay="300ms"
           />
         )}
