@@ -10,6 +10,7 @@ import { getFeaturedProjects } from "@/lib/api"
 import { getLatestBlogEntries } from "@/lib/api"
 import BlogEntryCard from "@/components/features/blog/blog-entry-card"
 import TechIcon from "@/components/features/tech/tech-icon"
+import ProjectCard from "@/components/features/projects/project-card"
 
 export default async function Home() {
   // Fetch data for the page
@@ -99,56 +100,7 @@ export default async function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredProjects.map((project, index) => (
-              <Card
-                key={project.slug}
-                className="overflow-hidden flex flex-col h-full hover-card-effect animate-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="aspect-video relative overflow-hidden">
-                  <Image
-                    src={project.imageUrl || "/placeholder.svg?height=400&width=600"}
-                    alt={project.title}
-                    fill
-                    className="object-cover image-hover-effect"
-                  />
-                  {project.featured && (
-                    <div className="absolute top-2 right-2">
-                      <Badge variant="secondary" className="bg-primary text-primary-foreground">
-                        Featured
-                      </Badge>
-                    </div>
-                  )}
-                </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="transition-colors hover:bg-primary hover:text-primary-foreground"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline" size="sm" className="transition-all hover:bg-secondary" asChild>
-                    <Link href={`/projects/${project.slug}`}>View Details</Link>
-                  </Button>
-                  {project.liveUrl && (
-                    <Button size="sm" className="transition-all hover:scale-105" asChild>
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        Live Site
-                      </Link>
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
+              <ProjectCard key={project.slug} project={project} index={index} />
             ))}
           </div>
         </div>
