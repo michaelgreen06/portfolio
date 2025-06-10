@@ -12,9 +12,19 @@ export default async function ProjectsPage() {
   // Get projects from MDX files
   const projects = await getAllProjects()
   
-  // Simple categorization without complex filtering
+  // Simple categorization with custom sorting
   const softwareProjects = projects.filter((p) => p.type === "software")
-  const physicalProjects = projects.filter((p) => p.type === "physical")
+  
+  // Sort physical projects by featured status first, then by date
+  const physicalProjects = projects
+    .filter((p) => p.type === "physical")
+    .sort((a, b) => {
+      // Featured projects first
+      if (a.featured && !b.featured) return -1
+      if (!a.featured && b.featured) return 1
+      // Then by date (newest first)
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    })
 
   return (
     <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
