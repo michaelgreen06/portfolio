@@ -9,8 +9,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
-import { getProjectBySlug } from "@/lib/api"
+import { getProjectBySlug, getRelatedContent } from "@/lib/api"
 import { getAllProjectSlugs } from "@/lib/mdx"
+import RelatedContentSection from "@/components/features/projects/related-content-section"
+import BottomCTASection from "@/components/features/projects/bottom-cta-section"
 
 interface ProjectPageProps {
   params: {
@@ -47,6 +49,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) {
     notFound()
   }
+
+  // Get related content
+  const relatedContent = await getRelatedContent(project.relatedContent || [])
 
   return (
     <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
@@ -123,6 +128,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="prose dark:prose-invert max-w-none animate-fade-in" style={{ animationDelay: "300ms" }}>
           <MDXRemote source={project.content} />
         </div>
+
+        {/* Bottom CTA Section */}
+        <BottomCTASection 
+          title={project.title}
+          url={project.liveUrl}
+          animationDelay="400ms"
+        />
+
+        {/* Related Content Section */}
+        <RelatedContentSection relatedContent={relatedContent} />
       </div>
     </main>
   )

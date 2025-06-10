@@ -39,6 +39,7 @@ export async function getProjectContent(slug: string): Promise<Project | null> {
       content,
       date: data.date,
       type: data.type,
+      relatedContent: data.relatedContent || [],
     }
   } catch (error) {
     console.error(`Error reading project content for ${slug}:`, error)
@@ -73,6 +74,7 @@ export async function getBlogContent(slug: string): Promise<JournalEntry | null>
         tags: data.tags || [],
         projects: data.projects,
         imageUrl: data.imageUrl,
+        relatedContent: data.relatedContent || [],
       }
     }
 

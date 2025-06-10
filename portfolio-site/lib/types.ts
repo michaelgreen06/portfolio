@@ -11,6 +11,7 @@ export interface Project {
   content: string
   date: string
   type: "software" | "physical"
+  relatedContent?: RelatedContentItem[]
 }
 
 // Journal entry type definition
@@ -24,6 +25,13 @@ export interface JournalEntry {
   tags: string[]
   projects?: string[]
   imageUrl?: string
+  relatedContent?: RelatedContentItem[]
+}
+
+// Related content type definition
+export interface RelatedContentItem {
+  type: "project" | "blog"
+  slug: string
 }
 
 // For backward compatibility

@@ -7,7 +7,10 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { getBlogEntryBySlug, getAllBlogEntries } from "@/lib/api"
+import { getBlogEntryBySlug, getAllBlogEntries, getRelatedContent } from "@/lib/api"
+import RelatedContentSection from "@/components/features/projects/related-content-section"
+import BottomCTASection from "@/components/features/projects/bottom-cta-section"
+import type { Project, JournalEntry } from "@/lib/types"
 
 interface BlogEntryPageProps {
   params: {
@@ -44,6 +47,14 @@ export default async function BlogEntryPage({ params }: BlogEntryPageProps) {
   if (!entry) {
     notFound()
   }
+
+  // Get related content
+  const relatedContent = await getRelatedContent(entry.relatedContent || [])
+
+  // Find a related project with a live URL for the CTA
+  const relatedProject = relatedContent.find((item): item is Project => {
+    return 'technologies' in item && Boolean(item.liveUrl)
+  }) as Project | undefined
 
   return (
     <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
@@ -107,6 +118,20 @@ export default async function BlogEntryPage({ params }: BlogEntryPageProps) {
             <MDXRemote source={entry.content} />
           </div>
         </article>
+
+        {/* Bottom CTA Section - Link to related project if available */}
+        {relatedProject && (
+          <BottomCTASection 
+            title={relatedProject.title}
+            url={relatedProject.liveUrl}
+            ctaText={`Try ${relatedProject.title}`}
+            description={`Ready to see the project I wrote about in action? ${relatedProject.description}`}
+            animationDelay="300ms"
+          />
+        )}
+
+        {/* Related Content Section */}
+        <RelatedContentSection relatedContent={relatedContent} />
       </div>
     </main>
   )

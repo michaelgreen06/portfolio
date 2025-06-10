@@ -1,4 +1,4 @@
-import type { Project, JournalEntry } from "./types"
+import type { Project, JournalEntry, RelatedContentItem } from "./types"
 import { projects } from "./projects" // Keeping for fallback
 import { getAllBlogSlugs, getBlogContent, getAllProjectSlugs, getProjectContent } from "./mdx"
 
@@ -170,4 +170,33 @@ export async function getBlogEntryBySlug(slug: string): Promise<JournalEntry | n
 
 // For backward compatibility
 export const getJournalEntryBySlug = getBlogEntryBySlug
+
+// Function to get related content for a project or blog post
+export async function getRelatedContent(relatedContentItems: RelatedContentItem[]): Promise<(Project | JournalEntry)[]> {
+  if (!relatedContentItems || relatedContentItems.length === 0) {
+    return []
+  }
+
+  const relatedContent: (Project | JournalEntry)[] = []
+
+  for (const item of relatedContentItems) {
+    try {
+      if (item.type === "project") {
+        const project = await getProjectBySlug(item.slug)
+        if (project) {
+          relatedContent.push(project)
+        }
+      } else if (item.type === "blog") {
+        const blogEntry = await getBlogEntryBySlug(item.slug)
+        if (blogEntry) {
+          relatedContent.push(blogEntry)
+        }
+      }
+    } catch (error) {
+      console.error(`Error fetching related content for ${item.type}:${item.slug}:`, error)
+    }
+  }
+
+  return relatedContent
+}
 
