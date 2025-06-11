@@ -1,0 +1,187 @@
+---
+title: "Eth Labels"
+description: "A public dataset of crypto addresses labeled from Ethereum and multiple EVM chains"
+technologies: ["TypeScript", "Bun", "Elysia", "SQLite", "Viem", "Cheerio", "Kysely", "Docker"]
+imageUrl: "https://res.cloudinary.com/dajtc0uhx/image/upload/q_auto,f_auto,c_crop,ar_16:9/v1749655053/eth-labels_bmlzot.png"
+githubUrl: "https://github.com/dawsbot/eth-labels"
+featured: false
+date: "2024-05-01"
+type: "software"
+---
+
+# Eth Labels: Public Dataset of Blockchain Address Labels
+
+## Project Overview
+
+Eth Labels was a comprehensive public dataset project that aggregated labeled cryptocurrency addresses from Ethereum and multiple EVM-compatible chains. Working alongside Dawson Botsford, creator of [Earnifi](https://earni.fi/), during May and June 2024, we addressed a critical need in blockchain research and analytics by making previously inaccessible address labeling data freely available to researchers, developers, and analysts.
+
+My primary contribution to the project focused on developing and implementing the REST API architecture that provided programmatic access to the dataset. The project extracted valuable address labeling information that was previously locked within individual blockchain explorers and transformed it into a shareable, standardized format accessible through multiple interfaces including CSV files, JSON data, SQLite database, and a REST API.
+
+## The Problem
+
+Blockchain researchers and analysts had long struggled with identifying the entities behind cryptocurrency addresses. While blockchain explorers like Etherscan, Arbiscan, and others maintained extensive databases of labeled addresses, this valuable data was historically:
+
+1. **Siloed within individual platforms** with no standardized access
+2. **Inaccessible for bulk research** and analytical purposes  
+3. **Not available in machine-readable formats** for automated processing
+4. **Fragmented across multiple chains** without unified access
+
+This data fragmentation created significant barriers for legitimate research, compliance efforts, and analytical work in the blockchain space.
+
+## The Solution
+
+Eth Labels addressed these challenges by:
+
+1. **Automated data extraction** from multiple blockchain explorers across 7+ EVM chains
+2. **Standardized data formats** available as CSV, JSON, and SQLite database
+3. **Public REST API** for programmatic access with comprehensive documentation
+4. **Multi-chain aggregation** covering Ethereum, Arbitrum, Optimism, Base, BSC, Gnosis, and Celo
+5. **Regular updates** through automated scraping and data refresh processes
+
+## Project Conclusion
+
+We eventually discovered that other established projects were already providing similar blockchain labeling services with more resources and broader adoption. Rather than competing in an already crowded space, we made the strategic decision to collaborate with these existing solutions, recognizing that our efforts would be more valuable when combined with established infrastructure and communities.
+
+## Technical Implementation
+
+### Data Collection Architecture
+
+The project employed a sophisticated web scraping system built with TypeScript and modern Node.js tooling:
+
+```typescript
+// Modular chain support through abstract base classes
+export const scanConfig = [
+  new EtherscanChain(),
+  new OptimismChain(), 
+  new ArbiscanChain(),
+  new BasescanChain(),
+  new CeloChain(),
+  new BscscanChain(),
+  new GnosisChain(),
+] as const;
+```
+
+### REST API Development (My Primary Focus)
+
+My main responsibility was architecting and implementing the REST API using Elysia.js, a modern TypeScript-first web framework optimized for Bun runtime:
+
+- **High-performance backend** leveraging Bun's speed advantages
+- **Type-safe API endpoints** with automatic validation using Zod schemas
+- **SQLite database integration** for efficient querying with Kysely query builder
+- **OpenAPI documentation** auto-generated through Swagger integration
+- **Comprehensive error handling** and response validation
+- **Flexible query parameters** supporting filtering, pagination, and search across multiple fields
+
+### Data Processing Pipeline
+
+The system implemented a robust ETL (Extract, Transform, Load) pipeline:
+
+1. **Web scraping** using Cheerio for HTML parsing
+2. **Progress tracking** with CLI progress bars for large data operations
+3. **Data validation** and normalization across different chain formats
+4. **Database optimization** with efficient indexing and query patterns
+
+### Multi-format Data Export
+
+Data was made available in multiple formats to serve different use cases:
+
+- **CSV files** (`accounts.csv`, `tokens.csv`) for spreadsheet analysis
+- **JSON exports** for web applications and APIs
+- **SQLite database** for complex queries and joins
+- **REST API** with filtering, pagination, and search capabilities
+
+## Challenges and Solutions
+
+### Rate Limiting and Ethical Scraping
+
+**Challenge:** Responsibly extracting large amounts of data without overwhelming source servers.
+
+**Solution:** Implemented intelligent rate limiting, respectful scraping intervals, and robust error handling to ensure sustainable data collection while respecting source platforms.
+
+### Cross-chain Data Standardization
+
+**Challenge:** Different blockchain explorers use varying data formats and structures.
+
+**Solution:** Developed an abstract chain interface with concrete implementations for each supported network, ensuring consistent data schema while accommodating platform-specific differences.
+
+### Scale and Performance
+
+**Challenge:** Processing millions of address labels efficiently while maintaining data integrity.
+
+**Solution:** Leveraged Bun's performance advantages, implemented streaming data processing to avoid memory constraints, and utilized SQLite with optimized indexing for fast queries.
+
+### API Reliability and Documentation
+
+**Challenge:** Providing a stable, well-documented API for diverse user needs.
+
+**Solution:** Built comprehensive OpenAPI documentation, implemented proper error handling and validation, and designed the system for reliable hosting and deployment.
+
+## Supported Blockchain Networks
+
+The project aggregated data from seven major EVM-compatible networks:
+
+- **Ethereum** (Etherscan) - The primary network with the most comprehensive labeling data
+- **Arbitrum** (Arbiscan) - Leading Layer 2 scaling solution
+- **Optimism** (Optimism Explorer) - Popular optimistic rollup network
+- **Base** (BaseScan) - Coinbase's Layer 2 network
+- **Binance Smart Chain** (BSCScan) - High-performance alternative blockchain
+- **Gnosis Chain** (Gnosis Explorer) - Ethereum sidechain focused on stable transactions
+- **Celo** (Celo Explorer) - Mobile-first blockchain platform
+
+## API Implementation
+
+The REST API I developed provided comprehensive access to the labeled address dataset through a clean, well-documented interface:
+
+### Endpoints
+
+1. **`/labels`** - Retrieved all available labels
+2. **`/labels/:address`** - Returned labels for a specific address
+3. **`/accounts`** - Searched account labels with advanced filtering
+4. **`/tokens`** - Searched token information with filtering capabilities
+5. **`/health`** - API health check endpoint
+
+### API Features
+
+- **Advanced filtering** by chain ID, address, label type, and name tags
+- **Pagination support** with configurable offset and limit parameters
+- **Flexible search** across multiple data fields
+- **Type-safe responses** with comprehensive Zod validation
+- **Automatic OpenAPI documentation** generation for easy integration
+- **Consistent error handling** with meaningful HTTP status codes
+
+## Outcomes and Impact
+
+During its active development period, Eth Labels successfully democratized access to blockchain address labeling data, providing:
+
+- **Enhanced research capabilities** for academic and industry analysts
+- **Improved compliance tools** for financial institutions and regulators
+- **Better fraud detection** through accessible address reputation data
+- **Standardized data formats** that reduced integration complexity for developers
+
+The project demonstrated the value of making previously siloed blockchain data accessible through modern API architecture, while highlighting the importance of collaboration over competition in the open-source ecosystem.
+
+## Technologies Used
+
+### Core Runtime and Framework
+- **Bun** - High-performance JavaScript runtime for enhanced speed
+- **TypeScript** - Type-safe development with modern language features
+- **Elysia.js** - Fast, ergonomic web framework built for Bun
+
+### Data Processing and Storage
+- **SQLite** - Embedded database for efficient local data storage
+- **Kysely** - Type-safe SQL query builder for database operations
+- **Cheerio** - Server-side HTML parsing for web scraping
+- **Viem** - TypeScript interface for Ethereum interaction
+
+### Development and Operations
+- **Docker** - Containerization for consistent deployment
+- **ESLint & Prettier** - Code quality and formatting automation
+- **Husky** - Git hooks for pre-commit validation
+- **Railway** - Cloud deployment platform
+
+### Testing and Quality Assurance
+- **Bun Test** - Native testing framework for unit and integration tests
+- **CLI Progress** - User-friendly progress tracking for long-running operations
+- **Zod** - Runtime type validation and schema definition
+
+This project represented a valuable learning experience in blockchain infrastructure development, demonstrating modern TypeScript development practices, efficient data processing techniques, and the importance of strategic collaboration in the open-source ecosystem. 
