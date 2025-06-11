@@ -1,0 +1,241 @@
+---
+title: "Gitcoin Passport"
+description: "Identity verification application enabling decentralized identity through verifiable credentials, EAS attestations, and GTC staking integration."
+technologies: ["React", "Next.js", "TypeScript", "Chakra UI", "Ethereum", "EAS", "Ceramic Network", "Web3", "Hardhat", "Solidity"]
+imageUrl: "https://passport.gitcoin.co/assets/gitcoinLogoDark.svg"
+githubUrl: "https://github.com/gitcoinco/passport"
+featured: true
+date: "2023-07-01"
+type: "software"
+---
+
+# Gitcoin Passport: Decentralized Identity Infrastructure
+
+## Project Overview
+
+Gitcoin Passport is a revolutionary identity verification application that addresses the critical challenge of proving unique human identity in digital spaces. Working as a frontend developer from March 2023 to July 2023, I contributed to building an identity infrastructure that enables organizations to assess individual proof of pesronhood with verifiable credentials.
+
+The project ended for me in July 2023 when I was laid off as part of a 30% headcount reduction, but during my tenure, I focused primarily on frontend development, EAS (Ethereum Attestation Service) integration, bringing passport stamps on-chain, and GTC staking functionality within the passport application.
+
+## The Problem
+
+Digital organizations, particularly in the Web3 space, face an ongoing struggle with sybil attacks and identity verification. Traditional identity solutions are either centralized (requiring trust in institutions) or individualistic (failing to capture the social nature of identity). The challenge was particularly acute for Gitcoin's grant funding mechanisms, where ensuring one-person-one-vote was essential for fair resource distribution.
+
+## The Solution
+
+Gitcoin Passport addresses these challenges through a comprehensive identity verification system that:
+
+1. **Aggregates verifiable credentials** from multiple platforms and services
+2. **Implements blockchain-based attestations** through EAS integration
+3. **Enables identity staking** using GTC tokens to strengthen identity assertions
+4. **Provides a user-friendly interface** for managing and verifying digital identity
+5. **Creates a scoring system** that quantifies identity uniqueness and authenticity
+
+## My Technical Contributions
+
+### Frontend Development
+
+As a frontend developer, I worked extensively on the React/Next.js application, contributing to several key components and user interface improvements. My work focused on creating intuitive user experiences for complex identity verification processes.
+
+**Key commits and contributions included:**
+- **Component Architecture**: Implemented macro components system to improve code reusability and maintainability across the platform
+- **UI/UX Improvements**: Enhanced user interface elements including toast notifications, modal dialogs, and progress indicators
+- **Platform Integration**: Developed and refined platform-specific verification components for various identity providers
+
+### EAS (Ethereum Attestation Service) Integration
+
+One of my primary focuses was integrating Ethereum Attestation Service to bring passport stamps on-chain. This work involved:
+
+**On-Chain Attestation System:**
+```typescript
+// SyncToChainButton component implementation
+const onSyncToChain = useCallback(async (wallet, passport) => {
+  const credentials = passport.stamps.map(({ credential }) => credential);
+  const gitcoinAttesterContract = new ethers.Contract(
+    process.env.NEXT_PUBLIC_GITCOIN_VERIFIER_CONTRACT_ADDRESS,
+    GitcoinVerifier.abi,
+    await ethersProvider.getSigner()
+  );
+  
+  const { data }: { data: EasPayload } = await axios({
+    method: "post",
+    url: `${process.env.NEXT_PUBLIC_PASSPORT_IAM_URL}v0.0.0/eas/passport`,
+    data: payload,
+  });
+  
+  const transaction = await gitcoinAttesterContract.verifyAndAttest(
+    data.passport, v, r, s, { value: data.passport.fee }
+  );
+});
+```
+
+**EAS-Proxy Infrastructure:**
+- Developed the EAS proxy service that acts as an attester for writing stamps into EAS attestations
+- Implemented the bridge between off-chain verifiable credentials and on-chain attestations
+- Created smart contracts for handling attestation verification and storage
+
+### GTC Staking Integration
+
+I contributed to the identity staking system that allows users to stake GTC tokens on their own identity or others', strengthening the overall identity verification system:
+
+**Staking Architecture:**
+```typescript
+// Community and Self-staking functionality
+const StakeItemCommunity = ({
+  amount, xstakesTo, unstakeUsers, buttonHandler
+}) => {
+  const unstakeHandler = async () => {
+    const users = xstakesTo.map(i => i?.to?.address);
+    await unstakeUsers(users);
+  };
+  
+  return (
+    <div className="border-divider border-b">
+      <h2>{formatGtc(amount)} GTC Staked</h2>
+      {/* Staking interface components */}
+    </div>
+  );
+};
+```
+
+**Identity Staking Features:**
+- **Self-Staking Interface**: Developed UI components allowing users to stake GTC on their own identity
+- **Community Staking**: Implemented functionality for users to stake on others' identities
+- **Staking Visualization**: Created components to display staking amounts, relationships, and rewards
+- **Smart Contract Integration**: Connected frontend to Solidity contracts managing GTC token staking and unstaking
+
+### Stamp Management System
+
+I worked on the core stamp verification and management system that forms the heart of the Passport application:
+
+**Platform Integration:**
+```typescript
+// GenericPlatform component for handling various identity providers
+const handleFetchCredential = async (): Promise<void> => {
+  const providerPayload = await platform.getProviderPayload({
+    state, window, screen, userDid, callbackUrl, selectedProviders, waitForRedirect
+  });
+  
+  const verifiedCredentials = await fetchVerifiableCredential(
+    iamUrl, providerPayload, signer as { signMessage: (message: string) => Promise<string> }
+  );
+};
+```
+
+**User Experience Enhancements:**
+- **Multi-Provider Support**: Developed interfaces for integrating with diverse identity providers (GitHub, Twitter, Discord, etc.)
+- **Real-time Verification**: Implemented live feedback during the verification process
+- **Stamp Expiration Handling**: Created systems for managing credential lifecycles and renewal processes
+- **Error Handling**: Developed comprehensive error states and user guidance for failed verifications
+
+## Technical Implementation
+
+### Frontend Architecture
+
+The passport application utilizes a modern React/Next.js stack with TypeScript, providing type safety and excellent developer experience:
+
+- **Next.js Framework**: Server-side rendering and API routes for optimal performance
+- **Chakra UI**: Component library ensuring consistent design and accessibility
+- **Context API**: State management for user authentication, ceramic database, and on-chain interactions
+- **Ethers.js**: Blockchain interaction and wallet connectivity
+- **Web3-Onboard**: Multi-wallet support including MetaMask, WalletConnect, and Ledger
+
+### Blockchain Integration
+
+The application seamlessly integrates with multiple blockchain networks and protocols:
+
+**Smart Contract Architecture:**
+```solidity
+contract IDStaking is Staking, EIP712, AccessControl {
+    mapping(uint256 => mapping(bytes32 => uint256)) public xStakes;
+    mapping(uint256 => Round) rounds;
+    
+    event xStake(uint256 roundId, address staker, address user, uint256 amount, bool staked);
+    
+    function stake(uint256 roundId, uint256 amount) external {
+        _stake(roundId, amount);
+        emit selfStake(roundId, msg.sender, amount, true);
+    }
+}
+```
+
+### Data Layer
+
+The application employs a hybrid data architecture combining traditional and decentralized storage:
+
+- **Ceramic Network**: Decentralized identity data storage using DID (Decentralized Identifiers)
+- **PostgreSQL**: Centralized scoring and analytics data via Passport Scorer API
+- **IPFS**: Distributed storage for larger credential artifacts
+- **EAS**: On-chain attestation records for verified credentials
+
+## Challenges and Solutions
+
+### Real-Time Verification Feedback
+
+**Challenge:** Providing immediate feedback during multi-step verification processes that involve external OAuth flows.
+
+**Solution:** Developed a broadcast channel system using browser APIs to communicate between windows, enabling seamless OAuth redirects while maintaining application state.
+
+### Scalable Identity Scoring
+
+**Challenge:** Creating a fair and manipulation-resistant scoring system for identity verification.
+
+**Solution:** Collaborated on implementing a hybrid scoring mechanism combining multiple verification sources with economic incentives through GTC staking, making identity farming economically unfeasible.
+
+## Outcomes and Impact
+
+During my time on the project, Gitcoin Passport achieved significant milestones:
+
+**User Adoption:**
+- Onboarded thousands of users building verifiable digital identities
+- Integrated with major Web3 platforms and grant funding mechanisms
+- Established the foundation for sybil-resistant governance systems
+
+**Technical Innovation:**
+- Pioneered the integration of verifiable credentials with blockchain attestations
+- Created one of the first practical implementations of identity staking
+- Developed reusable patterns for decentralized identity verification
+
+**Ecosystem Impact:**
+- Enabled fairer distribution of grant funding through improved sybil resistance
+- Provided infrastructure for other projects requiring identity verification
+- Advanced the state of decentralized identity solutions in the Web3 ecosystem
+
+## Future Development
+
+The project roadmap included several ambitious expansions:
+
+1. **Enhanced Privacy Features**: Zero-knowledge proof integration for credential verification
+2. **Cross-Chain Attestations**: Expanding EAS integration to multiple blockchain networks
+3. **Advanced Analytics**: Improved scoring algorithms and sybil detection mechanisms
+4. **Developer APIs**: Public APIs enabling third-party integrations and custom verification flows
+
+## Technologies Used
+
+### Frontend Stack
+- **React 17** - Component-based user interface development
+- **Next.js** - Full-stack React framework with SSR capabilities
+- **TypeScript** - Type-safe JavaScript for enhanced developer experience
+- **Chakra UI** - Accessible and customizable component library
+- **Tailwind CSS** - Utility-first CSS framework for rapid styling
+
+### Blockchain & Web3
+- **Ethers.js v6** - Ethereum blockchain interaction library
+- **Hardhat** - Development environment for smart contracts
+- **Solidity** - Smart contract programming language
+- **EAS (Ethereum Attestation Service)** - On-chain attestation infrastructure
+- **Web3-Onboard** - Multi-wallet connection and management
+
+### Identity & Data
+- **Ceramic Network** - Decentralized data network for identity storage
+- **DID (Decentralized Identifiers)** - W3C standard for decentralized identity
+- **Verifiable Credentials** - W3C standard for digital credential verification
+- **IPFS** - Distributed file storage system
+
+### Development Tools
+- **Jest** - Testing framework for JavaScript applications
+- **ESLint & Prettier** - Code quality and formatting tools
+- **Husky** - Git hooks for pre-commit validation
+- **Lerna** - Monorepo management for multiple packages
+
+This project represented a significant step forward in decentralized identity infrastructure, combining cutting-edge blockchain technology with intuitive user experiences. My contributions to the frontend architecture, EAS integration, and GTC staking system helped establish Gitcoin Passport as a leading solution for identity verification in the Web3 ecosystem, despite my time at the project ending early due to organizational restructuring.
