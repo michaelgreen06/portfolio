@@ -189,10 +189,6 @@ export default async function Home() {
             <p className="text-lg text-muted-foreground">
               I&apos;m a Full Stack Developer bringing a unique perspective from successfully founding and scaling a physical product business (0-to-1). My approach combines an engineer&apos;s analytical rigor with deep focus and modern development practices to build effective, user-centered software solutions. I thrive on translating complex challenges into valuable digital products.
             </p>
-            <p className="text-lg text-muted-foreground">
-              My approach combines technical expertise with a deep understanding of user needs, resulting in
-              applications that are both powerful and intuitive to use.
-            </p>
             <Button className="transition-all duration-300 hover:scale-105 hover:shadow-md" asChild>
               <Link href="/about" className="group">
                 More About Me <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
