@@ -65,6 +65,13 @@ One of my significant learnings was maximizing the potential of Wagmi hooks for 
 
 This approach improved code quality while accelerating development speed.
 
+### Taming Hydration Errors with Wagmi and Next.js
+
+Using RainbowKit and Wagmi for wallet connections led to a frustrating hydration issue. The wallet connection modal would pop up unexpectedly due to a mismatch between server-rendered and client-side state in Next.js's SSR architecture.
+
+To fix this, I had to enable the `ssr: true` flag in Wagmi's configuration. This meant moving away from RainbowKit’s convenient `getDefaultConfig` and using Wagmi’s core `createConfig` function directly. This solved the hydration errors but came with a trade-off: I could no longer use RainbowKit's default `ConnectButton`.
+
+I then built a custom connection modal using Wagmi's `useConnect` hook. This provided a stable, flicker-free connection experience. This deeper integration with Wagmi's core also had the added benefit of simplifying other parts of the application, such as the network-switching logic, leading to cleaner and more maintainable code.
 
 
 ### Multi-chain and Multi-token Support
