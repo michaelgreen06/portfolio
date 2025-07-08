@@ -58,8 +58,30 @@ export default function AboutPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">From Physical Products to Digital Solutions</h2>
               <p className="text-lg text-muted-foreground mb-4">
-              My transition into software development is built on a proven foundation of real-world product creation. I founded Simpacti, the company behind packNpuff, over nine years ago and have been running it ever since. packNpuff is a product I designed to address a specific need in the cannabis accessory market. This venture has been a comprehensive lesson in the entire product lifecycle: identifying a user pain point (inefficiently making smaller joints), engineering a novel solution, navigating manufacturing, adapting my strategy from B2B to a successful B2C model on Amazon (achieving 4.5 stars with 930+ reviews), and managing all aspects of the business. I learned firsthand the importance of user empathy, iterative development based on feedback (Build-Measure-Learn), resilience in overcoming obstacles, and operational efficiency – even incorporating sustainable practices like plant-based materials and recycled packaging. 
+              My transition into software development is built on a proven foundation of real-world product creation. I founded Simpacti, the company behind packNpuff, over nine years ago and have been running it ever since. This venture was a masterclass in the entire product lifecycle: identifying a user pain point, engineering a solution, navigating manufacturing, and adapting to market feedback to grow a successful B2C brand on Amazon (4.5 stars with 930+ reviews).
               </p>
+              <p className="text-lg text-muted-foreground mb-4">
+                This experience taught me the hard-won lessons of entrepreneurship: the importance of customer obsession, the necessity of resilience, and that a great product is not enough. You need a viable business model.
+              </p>
+            </section>
+
+            <Separator />
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">My Product-First Engineering Philosophy</h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                My entrepreneurial journey led me to discover frameworks that crystallized my own experiences into a repeatable process. Discovering Ash Maurya's "Running Lean" was a pivotal moment. It provided a language and a systematic approach—the Lean Canvas, problem interviews, and the Demo-Sell-Build model—for the very principles I had learned intuitively.
+              </p>
+               <p className="text-lg text-muted-foreground mb-4">
+                This is the mindset I bring to software development. I am not just an engineer who writes code; I am a product-focused builder who seeks to de-risk ideas and validate assumptions before a single line of code is written. My goal is to bridge the gap between engineering and business value, ensuring that we are always asking not just "Can we build it?" but "Should we build it?".
+              </p>
+               <div className="mt-6">
+                 <Button variant="outline" className="w-full md:w-auto" asChild>
+                   <Link href="/blog/book-rev-running-lean" scroll={true}>
+                     My Notes on &quot;Running Lean&quot; <ArrowRight className="ml-2 h-4 w-4" />
+                   </Link>
+                 </Button>
+               </div>
             </section>
 
             <Separator />

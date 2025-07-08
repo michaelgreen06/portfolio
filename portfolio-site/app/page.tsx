@@ -58,7 +58,7 @@ export default async function Home() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-          Leveraging an engineering mindset and proven 0-to-1 product experience to build impactful digital solutions. </p>
+            I build software with an engineer&apos;s precision and a founder&apos;s focus on business value. My product-first approach de-risks new ideas and ensures I&apos;m building the right thing. </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md" asChild>
                 <Link href="/projects">
@@ -187,7 +187,7 @@ export default async function Home() {
           <div className="md:w-2/3 space-y-6 animate-slide-up">
             <h2 className="text-3xl font-bold tracking-tight gradient-text">About Me</h2>
             <p className="text-lg text-muted-foreground">
-              I&apos;m a Full Stack Developer bringing a unique perspective from successfully founding and scaling a physical product business (0-to-1). My approach combines an engineer&apos;s analytical rigor with deep focus and modern development practices to build effective, user-centered software solutions. I thrive on translating complex challenges into valuable digital products.
+            I&apos;m a full-stack developer with a founder&apos;s mindset. After 8+ years building a successful physical products company from scratch, I now apply those hard-won lessons to software. My philosophy, shaped by experience and frameworks like <i>Continous Innovation</i>, is to focus on de-risking ideas, validating problems, and building solutions that create tangible business value. I bridge the gap between technical execution and strategic product thinking.
             </p>
             <Button className="transition-all duration-300 hover:scale-105 hover:shadow-md" asChild>
               <Link href="/about" className="group">
