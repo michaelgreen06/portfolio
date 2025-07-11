@@ -58,7 +58,8 @@ export default async function Home() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-            I build software with an engineer&apos;s precision and a founder&apos;s focus on business value. My product-first approach de-risks new ideas and ensures I&apos;m building the right thing. </p>
+            I build software with an engineer's precision and a founder's focus on the bigger picture. My product first approach combines deep user empathy with a drive to solve the right problems.
+               </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-md" asChild>
                 <Link href="/projects">
