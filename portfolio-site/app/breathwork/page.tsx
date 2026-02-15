@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Volume2 } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { AudioPlayer } from "@/components/features/audio/audio-player";
 
 export const metadata: Metadata = {
   title: "Breathwork | Michael Green",
@@ -26,28 +25,12 @@ export default function BreathworkPage() {
           </p>
         </div>
 
-        <Card className="mb-8 animate-slide-up shadow-xl hover:shadow-2xl transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Volume2 className="h-5 w-5 text-primary" />
-              Guided Breathwork Audio
-            </CardTitle>
-            <CardDescription>
-              Listen to this guided session for relaxation and mental clarity.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <audio
-              id="breathwork-audio"
-              src="/audio/breathwork-chill.mp3"
-              controls
-              className="w-full"
-              preload="metadata"
-            >
-              Your browser does not support the audio element.
-            </audio>
-          </CardContent>
-        </Card>
+        <div className="mb-8 animate-slide-up">
+          <AudioPlayer
+            src="/audio/breathwork-chill.mp3"
+            title="Guided Breathwork — Relaxation & Mental Clarity"
+          />
+        </div>
 
         <Card className="animate-fade-in" style={{ animationDelay: "200ms" }}>
           <CardHeader>
@@ -58,7 +41,7 @@ export default function BreathworkPage() {
               Breathwork is a practice that involves conscious control of
               breathing patterns. It can help reduce stress, improve focus, and
               promote relaxation. Take your time with this session and find a
-              comfortable, quiet space where you won't be disturbed.
+              comfortable, quiet space where you won&apos;t be disturbed.
             </p>
             <p className="mt-4">
               <strong>Tips for best experience:</strong>
