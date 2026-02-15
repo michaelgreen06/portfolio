@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Volume2, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { AudioPlayer } from "@/components/features/audio/audio-player";
 
 export const metadata: Metadata = {
   title: "Something Big Is Happening | Michael Green",
@@ -36,27 +36,12 @@ export default function SomethingBigPage() {
           </p>
         </div>
 
-        <Card className="mb-8 animate-slide-up shadow-xl hover:shadow-2xl transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Volume2 className="h-5 w-5 text-primary" />
-              Listen to the Article
-            </CardTitle>
-            <CardDescription>
-              Full article narrated with Kokoro TTS (~15 minutes).
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <audio
-              src="/audio/something-big-is-happening.mp3"
-              controls
-              className="w-full"
-              preload="metadata"
-            >
-              Your browser does not support the audio element.
-            </audio>
-          </CardContent>
-        </Card>
+        <div className="mb-8 animate-slide-up">
+          <AudioPlayer
+            src="/audio/something-big-is-happening.mp3"
+            title="Something Big Is Happening — Full Article (~28 min)"
+          />
+        </div>
 
         <Card className="animate-fade-in" style={{ animationDelay: "200ms" }}>
           <CardHeader>
