@@ -12,6 +12,18 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "2028-global-intelligence-crisis",
+    title: "The 2028 Global Intelligence Crisis",
+    author: "Citrini Research",
+    description:
+      "A fictional macro memo from June 2028 modeling what happens when AI bullishness is right — and that's actually bearish. Traces the feedback loop from white-collar layoffs to Ghost GDP, SaaS collapse, private credit defaults, and a mortgage crisis driven not by bad loans but by a world that changed after they were written.",
+    audioSrc: "/audio/2028-global-intelligence-crisis.mp3",
+    sourceUrl: "https://www.citriniresearch.com/p/2028gic",
+    sourceName: "citriniresearch.com",
+    duration: "48 min",
+    publishedDate: "2026-02-22",
+  },
+  {
     slug: "something-big-is-happening",
     title: "Something Big Is Happening",
     author: "Matt Shumer",
