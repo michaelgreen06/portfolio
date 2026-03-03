@@ -12,6 +12,18 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "dan-wang-2025-letter",
+    title: "2025 Letter",
+    author: "Dan Wang",
+    description:
+      "Dan Wang's annual letter comparing Silicon Valley and the Chinese Communist Party as the two most powerful forces shaping the world. Covers AI hype and the myth of decisive strategic advantage, China's humming tech engine and manufacturing dominance, Europe's two-front decline, and why the US needs to stop underrating Chinese industrial progress and start building again.",
+    audioSrc: "/audio/dan-wang-2025-letter.mp3",
+    sourceUrl: "https://danwang.co/2025-letter/",
+    sourceName: "danwang.co",
+    duration: "85 min",
+    publishedDate: "2025-12-29",
+  },
+  {
     slug: "2028-global-intelligence-crisis",
     title: "The 2028 Global Intelligence Crisis",
     author: "Citrini Research",
