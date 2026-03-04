@@ -29,6 +29,33 @@ interface AudioPlayerProps {
 
 const PLAYBACK_SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 const SKIP_SECONDS = 15;
+const STORAGE_PREFIX = "audio-player:";
+
+function storageKey(src: string) {
+  return STORAGE_PREFIX + src;
+}
+
+function savePosition(src: string, time: number, rate: number) {
+  try {
+    localStorage.setItem(
+      storageKey(src),
+      JSON.stringify({ time, rate, ts: Date.now() })
+    );
+  } catch {}
+}
+
+function loadPosition(src: string): { time: number; rate: number } | null {
+  try {
+    const raw = localStorage.getItem(storageKey(src));
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    // Expire after 30 days
+    if (Date.now() - data.ts > 30 * 24 * 60 * 60 * 1000) return null;
+    return { time: data.time ?? 0, rate: data.rate ?? 1 };
+  } catch {
+    return null;
+  }
+}
 
 function formatTime(seconds: number): string {
   if (!isFinite(seconds) || seconds < 0) return "0:00";
@@ -56,8 +83,23 @@ export function AudioPlayer({ src, title, className }: AudioPlayerProps) {
     const onLoadedMetadata = () => {
       setDuration(el.duration);
       setIsLoaded(true);
+      // Restore saved position
+      const saved = loadPosition(src);
+      if (saved) {
+        if (saved.time > 0 && saved.time < el.duration - 1) {
+          el.currentTime = saved.time;
+          setCurrentTime(saved.time);
+        }
+        if (saved.rate !== 1) {
+          el.playbackRate = saved.rate;
+          setPlaybackRate(saved.rate);
+        }
+      }
     };
-    const onTimeUpdate = () => setCurrentTime(el.currentTime);
+    const onTimeUpdate = () => {
+      setCurrentTime(el.currentTime);
+      savePosition(src, el.currentTime, el.playbackRate);
+    };
     const onEnded = () => setIsPlaying(false);
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
