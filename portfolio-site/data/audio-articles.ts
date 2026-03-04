@@ -12,6 +12,18 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "the-coming-great-transition",
+    title: "The Coming Great Transition v 2.0",
+    author: "Jordan Greenhall",
+    description:
+      "A sweeping essay arguing the Great Transition is upon us: AI agent swarms are dismantling the post-industrial economy, centralized AI loses to distributed intimate AI, and the real challenge isn't technological but spiritual - shifting from a scarcity mentality to one capable of living in abundance. Mixes tech analysis with theology, game theory, and civilizational critique.",
+    audioSrc: "/audio/the-coming-great-transition.mp3",
+    sourceUrl: "https://deepcode.substack.com/p/the-coming-great-transition-v-20",
+    sourceName: "deepcode.substack.com",
+    duration: "45 min",
+    publishedDate: "2026-02-28",
+  },
+  {
     slug: "dan-wang-2025-letter",
     title: "2025 Letter",
     author: "Dan Wang",
