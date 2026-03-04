@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, Download, ExternalLink } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -71,7 +71,7 @@ export default async function AudioSlugPage({ params }: AudioSlugPageProps) {
           </CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none">
             <p>{article.description}</p>
-            <p className="mt-4">
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
               <a
                 href={article.sourceUrl}
                 target="_blank"
@@ -81,7 +81,16 @@ export default async function AudioSlugPage({ params }: AudioSlugPageProps) {
                 Read the original on {article.sourceName}
                 <ExternalLink className="h-4 w-4" />
               </a>
-            </p>
+              <span className="hidden sm:inline text-muted-foreground">·</span>
+              <a
+                href={article.audioSrc}
+                download
+                className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+              >
+                Download MP3
+                <Download className="h-4 w-4" />
+              </a>
+            </div>
           </CardContent>
         </Card>
       </div>
