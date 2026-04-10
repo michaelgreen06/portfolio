@@ -12,6 +12,19 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "there-are-zero-day-exploits-for-your-mind",
+    title: "There Are Zero-Day Exploits for Your Mind",
+    author: "Michael Morgenstern",
+    description:
+      "Anthropic's Claude Mythos found thousands of code vulnerabilities in weeks — a Move 37 moment for computer security. But the deeper threat is what happens when that same paradigm-breaking capability targets human psychology: personal data as attack surface, persuasion techniques we haven't imagined, and a trust model built on assumptions that AI is about to falsify.",
+    audioSrc: "/audio/there-are-zero-day-exploits-for-your-mind.mp3",
+    sourceUrl:
+      "https://mikemorgenstern.substack.com/p/there-are-zero-day-exploits-for-your-mind",
+    sourceName: "mikemorgenstern.substack.com",
+    duration: "24 min",
+    publishedDate: "2026-04-10",
+  },
+  {
     slug: "a-lean-canvas-is-not-enough-to-replace-a-business-plan",
     title: "A Lean Canvas is NOT Enough to Replace a Business Plan",
     author: "Ash Maurya",
