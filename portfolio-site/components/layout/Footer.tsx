@@ -87,7 +87,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="mailto:mgdevstuff@gmail.com"
+                  href="mailto:me@michaelgreen06.com"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
                 >
                   <Mail className="h-4 w-4 mr-2" /> Email

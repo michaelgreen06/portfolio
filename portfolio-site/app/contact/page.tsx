@@ -30,10 +30,10 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <Link
-                href="mailto:mgdevstuff@gmail.com"
+                href="mailto:me@michaelgreen06.com"
                 className="text-primary hover:underline hover:text-primary/80 transition-colors"
               >
-                mgdevstuff@gmail.com
+                me@michaelgreen06.com
               </Link>
             </CardContent>
           </Card>
