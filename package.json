@@ -1,0 +1,10 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix portfolio-site",
+    "build": "npm run build --prefix portfolio-site",
+    "start": "npm run start --prefix portfolio-site",
+    "lint": "npm run lint --prefix portfolio-site"
+  }
+}
