@@ -4,6 +4,7 @@ import {
   Book,
   ExternalLink,
   FileText,
+  Headphones,
   Mail,
   Presentation,
   Sparkles,
@@ -31,6 +32,7 @@ type ResourceLink = {
   external?: boolean;
   internal?: boolean;
   comingSoon?: boolean;
+  openInNewTab?: boolean;
 };
 
 const resources: ResourceLink[] = [
@@ -78,10 +80,19 @@ const resources: ResourceLink[] = [
   },
   {
     label: "Recording of BSW Presentation",
-    href: "#",
-    description: "Coming soon.",
+    href: "/bsw/recording",
+    description: "Watch the full presentation recording.",
     icon: Video,
-    comingSoon: true,
+    internal: true,
+    openInNewTab: true,
+  },
+  {
+    label: "Audio of BSW Presentation",
+    href: "/audio/now-that-ai-can-build-anything-clipd.mp3",
+    description: "Listen to the presentation audio.",
+    icon: Headphones,
+    internal: true,
+    openInNewTab: true,
   },
   {
     label: "Let's Connect!",
@@ -152,7 +163,7 @@ export default function BswPage() {
                         <span className="group-hover:underline">
                           {resource.label}
                         </span>
-                        {resource.external && (
+                        {(resource.external || resource.openInNewTab) && (
                           <ExternalLink className="h-4 w-4 opacity-60" />
                         )}
                       </div>
@@ -165,7 +176,7 @@ export default function BswPage() {
                   </>
                 );
 
-                if (resource.internal) {
+                if (resource.internal && !resource.openInNewTab) {
                   return (
                     <li key={resource.label}>
                       <Link href={resource.href} className={linkClasses}>
@@ -179,8 +190,8 @@ export default function BswPage() {
                   <li key={resource.label}>
                     <a
                       href={resource.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={resource.openInNewTab ? "_blank" : undefined}
+                      rel={resource.openInNewTab ? "noopener noreferrer" : undefined}
                       className={linkClasses}
                     >
                       {inner}
