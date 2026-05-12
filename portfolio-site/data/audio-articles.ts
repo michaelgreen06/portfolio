@@ -12,6 +12,18 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "what-will-be-scarce",
+    title: "What will be scarce?",
+    author: "Alex Imas",
+    description:
+      "An argument that AI won't eliminate scarcity so much as relocate it. As commodity production gets automated and cheap, demand shifts toward a relational sector where human provenance, exclusivity, care, status, and social meaning are part of the product itself. Draws on structural change, mimetic desire, and the economics of artisanal and human-intensive work.",
+    audioSrc: "/audio/what-will-be-scarce.mp3",
+    sourceUrl: "https://aleximas.substack.com/p/what-will-be-scarce",
+    sourceName: "aleximas.substack.com",
+    duration: "38 min",
+    publishedDate: "2026-05-08",
+  },
+  {
     slug: "ai-energy-footprint",
     title: "We did the math on AI’s energy footprint. Here’s the story you haven’t heard.",
     author: "James O'Donnell and Casey Crownhart",
