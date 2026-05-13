@@ -1,0 +1,86 @@
+---
+title: "Bondy by Haraka"
+description: "A social finance platform that evolved from emerging-market credit to payroll-linked savings and payouts for remote workers."
+technologies: [
+  "Next.js",
+  "Hono",
+  "TypeScript",
+  "PostgreSQL",
+  "Kysely",
+  "Privy",
+  "HoneyCoin",
+  "Fireblocks",
+  "Redis",
+  "M-Pesa",
+]
+imageUrl: "/placeholder.svg?height=600&width=1200"
+githubUrl: "https://github.com/harakaxyz/bondy"
+featured: true
+date: "2026-03-11"
+type: "software"
+---
+
+# Bondy by Haraka: Social Finance for Emerging Markets
+
+## Project Overview
+
+Bondy began as a credit and lending product for users in emerging markets and later evolved toward a broader financial workflow for remote workers. The final product direction focused on helping users receive pay, hold value in stable assets, earn interest on balances, and move money across local rails with less friction and fewer foreign exchange losses.
+
+## The Product Evolution
+
+The project changed shape as we learned more about the market and what users actually needed.
+
+1. **Initial direction:** provide credit and lending for underserved users in emerging markets.
+2. **Evolved direction:** support remote workers who needed an easier way to receive pay, keep funds in a stable store of value, and access yield-bearing savings.
+3. **Operational reality:** reduce the complexity of moving money between wallets, stablecoins, and local payout rails like M-Pesa and bank transfer flows.
+
+That evolution is reflected in the codebase: early credit workflows gave way to on-ramp, off-ramp, savings, and balance-management systems across USD, KES, and NGN.
+
+## My Contributions
+
+I worked across the product and infrastructure layers of the system, including:
+
+1. **Credit workflow implementation** - pending credit tables, idempotency, repayment logic, UI updates, and guards around credit activation and duplicate actions.
+2. **Wallet and custody flows** - moving funds between user wallets, safe balances, Fireblocks, and downstream payout rails.
+3. **Referral system development** - referral links, signup capture, URL persistence, and referral reward tracking.
+4. **Multi-currency money movement** - KES and NGN on-ramp/off-ramp logic, exchange-rate handling, minimum and maximum limits, and fallback pricing.
+5. **Operational safeguards** - withdrawal alerts, anti-double-spend protections, backfill jobs, country restrictions, and admin tooling.
+6. **Frontend polish and product iteration** - state management cleanup, Figma-aligned UI updates, loading states, and mobile-friendly adjustments.
+
+## Technical Scope
+
+The repo was a TypeScript monorepo with a Next.js frontend and Hono backend, backed by PostgreSQL and Kysely. The product also used:
+
+- **Privy** for wallet auth
+- **HoneyCoin** for on-ramp and off-ramp flows
+- **Fireblocks** for custody and withdrawals
+- **Redis** for caching and operational jobs
+- **Jotai** and **React Query** for frontend state and server data
+
+The financial model depended on careful balance calculations, route validation, transaction status tracking, and consistent handling of currencies and exchange rates.
+
+## Challenges and Solutions
+
+### Changing Product Direction
+
+**Challenge:** the original credit-first thesis did not remain the final product shape.
+
+**Solution:** I helped evolve the implementation without breaking the underlying money movement system, reusing the core accounting and state-management pieces while adapting the UX and workflows to the new direction.
+
+### Safe Money Movement
+
+**Challenge:** financial actions needed to be idempotent, observable, and resistant to duplicate withdrawal or credit actions.
+
+**Solution:** I added logic for idempotency, pending-action guards, alerting, and backfill processes so the system could recover safely and operate with fewer edge cases.
+
+### Supporting Multiple Local Rails
+
+**Challenge:** KES and NGN flows had different limits, account expectations, and exchange-rate behavior.
+
+**Solution:** I worked on shared schemas and currency-specific logic so the frontend and backend could handle local payment rails without leaking inconsistent assumptions into the UI.
+
+## Outcome
+
+Bondy ended as a more mature financial product than where it started. The work I contributed helped turn the repo from a credit prototype into a practical platform for stablecoin-backed savings, local payouts, and cross-border money movement for remote workers.
+
+This project is a good example of product iteration under real constraints: changing user needs, evolving market fit, and the need to keep the financial core correct while the product direction shifted.
