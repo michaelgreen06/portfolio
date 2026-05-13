@@ -1,20 +1,20 @@
 ---
 title: "Bondy by Haraka"
-description: "A social finance platform that evolved from emerging-market credit to payroll-linked savings and payouts for remote workers."
-technologies: [
-  "Next.js",
-  "Hono",
-  "TypeScript",
-  "PostgreSQL",
-  "Kysely",
-  "Privy",
-  "HoneyCoin",
-  "Fireblocks",
-  "Redis",
-  "M-Pesa",
-]
-imageUrl: "/placeholder.svg?height=600&width=1200"
-githubUrl: "https://github.com/harakaxyz/bondy"
+description: "A social finance platform that evolved from emerging-market credit to USD payouts and high yield savings for remote workers."
+technologies:
+  [
+    "Next.js",
+    "Hono",
+    "TypeScript",
+    "PostgreSQL",
+    "Kysely",
+    "Privy",
+    "HoneyCoin",
+    "BlockRadar",
+    "Redis",
+    "M-Pesa",
+  ]
+imageUrl: "https://res.cloudinary.com/dajtc0uhx/image/upload/q_auto,f_auto,c_pad,ar_16:9,b_white/v1778715349/Screenshot_2026-05-13_at_17.35.08_rlyzur.png"
 featured: true
 date: "2026-03-11"
 type: "software"
@@ -24,15 +24,15 @@ type: "software"
 
 ## Project Overview
 
-Bondy began as a credit and lending product for users in emerging markets and later evolved toward a broader financial workflow for remote workers. The final product direction focused on helping users receive pay, hold value in stable assets, earn interest on balances, and move money across local rails with less friction and fewer foreign exchange losses.
+Bondy began as a credit and lending product for users in emerging markets and later evolved toward a broader financial workflow for remote workers. The final product direction focused on helping users receive payments in USD, save and earn interest on those USD payments, and move money across local rails with less friction and fewer foreign exchange losses.
 
 ## The Product Evolution
 
-The project changed shape as we learned more about the market and what users actually needed.
+The project changed shape as we struggled to find product market fit.
 
 1. **Initial direction:** provide credit and lending for underserved users in emerging markets.
-2. **Evolved direction:** support remote workers who needed an easier way to receive pay, keep funds in a stable store of value, and access yield-bearing savings.
-3. **Operational reality:** reduce the complexity of moving money between wallets, stablecoins, and local payout rails like M-Pesa and bank transfer flows.
+2. **Evolved direction:** support remote workers who needed an easier way to receive payments in USD, store their funds in USD, and access yield on thier USD savings.
+3. **Operational reality:** reduce the complexity of receiving funds and saving in USD and spending in local currencies.
 
 That evolution is reflected in the codebase: early credit workflows gave way to on-ramp, off-ramp, savings, and balance-management systems across USD, KES, and NGN.
 
@@ -51,13 +51,14 @@ I worked across the product and infrastructure layers of the system, including:
 
 The repo was a TypeScript monorepo with a Next.js frontend and Hono backend, backed by PostgreSQL and Kysely. The product also used:
 
-- **Privy** for wallet auth
-- **HoneyCoin** for on-ramp and off-ramp flows
-- **Fireblocks** for custody and withdrawals
-- **Redis** for caching and operational jobs
-- **Jotai** and **React Query** for frontend state and server data
+- **BullMQ + Redis:** background jobs for earnings processing, transaction backfills, balance syncs, referral payouts, and withdrawal polling.
+- **Bubblewrap:** packaging the web app as a Trusted Web Activity so it could ship to the Android Play Store.
+- **Privy:** wallet authentication and user session management.
+- **HoneyCoin:** on-ramp and off-ramp flows for KES and NGN.
+- **BlockRadar:** custody, withdrawal handling, and transaction status tracking.
+- **Jotai and React Query:** frontend state and server data management.
 
-The financial model depended on careful balance calculations, route validation, transaction status tracking, and consistent handling of currencies and exchange rates.
+The financial model depended on careful balance calculations, route validation, transaction status tracking, and consistent handling of currencies, exchange rates, and mobile release flows.
 
 ## Challenges and Solutions
 
