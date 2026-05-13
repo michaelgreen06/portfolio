@@ -12,6 +12,30 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "what-will-be-scarce",
+    title: "What will be scarce?",
+    author: "Alex Imas",
+    description:
+      "An argument that AI won't eliminate scarcity so much as relocate it. As commodity production gets automated and cheap, demand shifts toward a relational sector where human provenance, exclusivity, care, status, and social meaning are part of the product itself. Draws on structural change, mimetic desire, and the economics of artisanal and human-intensive work.",
+    audioSrc: "/audio/what-will-be-scarce.mp3",
+    sourceUrl: "https://aleximas.substack.com/p/what-will-be-scarce",
+    sourceName: "aleximas.substack.com",
+    duration: "38 min",
+    publishedDate: "2026-05-08",
+  },
+  {
+    slug: "ai-energy-footprint",
+    title: "We did the math on AI’s energy footprint. Here’s the story you haven’t heard.",
+    author: "James O'Donnell and Casey Crownhart",
+    description:
+      "A reported deep dive into AI's electricity use and climate footprint: what a single text, image, or video query costs, why public estimates are full of holes, how data center demand is reshaping the power grid, and why Big Tech's AI buildout marks a sharp break from the industry's earlier efficiency gains.",
+    audioSrc: "/audio/ai-energy-footprint.mp3",
+    sourceUrl: "https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/",
+    sourceName: "technologyreview.com",
+    duration: "40 min",
+    publishedDate: "2025-05-20",
+  },
+  {
     slug: "there-are-zero-day-exploits-for-your-mind",
     title: "There Are Zero-Day Exploits for Your Mind",
     author: "Michael Morgenstern",
