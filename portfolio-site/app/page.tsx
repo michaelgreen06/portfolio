@@ -29,18 +29,18 @@ export default async function Home() {
     ],
     backend: [
       { name: "Node.js", logo: "/images/logos/nodejs.svg" },
-      { name: "Express", logo: "/images/logos/express.svg" },
+      { name: "HonoJS", logo: "/images/logos/hono.webp" },
       { name: "PostgreSQL", logo: "/images/logos/postgresql.svg" },
       { name: "REST API", logo: "/images/logos/api.svg" },
-      { name: "Scaffold ETH", logo: "/images/logos/scaffold-eth.svg" },
-      { name: "Python", logo: "/images/logos/python.svg" },
+      { name: "BullMQ", logo: "/images/logos/bull.png" },
+      { name: "Kysely", logo: "/images/logos/kysely.svg" },
     ],
     tools: [
       { name: "Git", logo: "/images/logos/git.svg" },
       { name: "Postman", logo: "/images/logos/postman.svg" },
       { name: "Docker", logo: "/images/logos/docker.svg" },
-      { name: "GraphQL", logo: "/images/logos/graphql.svg" },
-      { name: "Windsurf", logo: "/images/logos/windsurf.svg" },
+      { name: "Claude Code", logo: "/images/logos/claude-code.png" },
+      { name: "Codex", logo: "/images/logos/codex.png" },
       { name: "NPM", logo: "/images/logos/npm.svg" },
     ],
   }
@@ -220,4 +220,3 @@ export default async function Home() {
     </main>
   )
 }
-
