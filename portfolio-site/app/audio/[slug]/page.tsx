@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { audioArticles, getArticleBySlug } from "@/data/audio-articles";
 import { AudioPlayer } from "@/components/features/audio/audio-player";
+import { resolveAudioUrl } from "@/lib/audio";
 
 interface AudioSlugPageProps {
   params: Promise<{ slug: string }>;
@@ -36,6 +37,7 @@ export default async function AudioSlugPage({ params }: AudioSlugPageProps) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) notFound();
+  const audioSrc = resolveAudioUrl(article.audioFileName);
 
   return (
     <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
@@ -57,7 +59,7 @@ export default async function AudioSlugPage({ params }: AudioSlugPageProps) {
 
         <div className="mb-8 animate-slide-up">
           <AudioPlayer
-            src={article.audioSrc}
+            src={audioSrc}
             title={`${article.title} — ${article.author} (${article.duration})`}
           />
         </div>
@@ -83,7 +85,7 @@ export default async function AudioSlugPage({ params }: AudioSlugPageProps) {
               </a>
               <span className="hidden sm:inline text-muted-foreground">·</span>
               <a
-                href={article.audioSrc}
+                href={audioSrc}
                 download
                 className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
               >

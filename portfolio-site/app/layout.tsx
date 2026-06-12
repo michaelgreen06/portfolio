@@ -7,10 +7,12 @@ import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import ScrollToTop from "@/components/layout/ScrollToTop"
+import { SITE_URL } from "@/lib/site"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Michael Green | Full Stack Developer",
   description: "Michael Green's portfolio. A full stack developer focused on building products that solve real problems.",
   icons: {

@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { resolveAudioUrl } from "@/lib/audio";
 
 export const metadata: Metadata = {
   title: "Something Big Is Happening | Michael Green",
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 };
 
 export default function SomethingBigPage() {
+  const audioSrc = resolveAudioUrl("something-big-is-happening.mp3");
+
   return (
     <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
       <div className="max-w-3xl mx-auto">
@@ -48,7 +51,7 @@ export default function SomethingBigPage() {
           </CardHeader>
           <CardContent>
             <audio
-              src="/audio/something-big-is-happening.mp3"
+              src={audioSrc}
               controls
               className="w-full"
               preload="metadata"

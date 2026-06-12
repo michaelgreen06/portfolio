@@ -3,7 +3,9 @@ export interface AudioArticle {
   title: string;
   author: string;
   description: string;
-  audioSrc: string;
+  audioFileName: string;
+  audioByteLength: number;
+  audioDurationSeconds: number;
   sourceUrl: string;
   sourceName: string;
   duration: string;
@@ -17,7 +19,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Alex Imas",
     description:
       "An argument that AI won't eliminate scarcity so much as relocate it. As commodity production gets automated and cheap, demand shifts toward a relational sector where human provenance, exclusivity, care, status, and social meaning are part of the product itself. Draws on structural change, mimetic desire, and the economics of artisanal and human-intensive work.",
-    audioSrc: "/audio/what-will-be-scarce.mp3",
+    audioFileName: "what-will-be-scarce.mp3",
+    audioByteLength: 36920109,
+    audioDurationSeconds: 2307,
     sourceUrl: "https://aleximas.substack.com/p/what-will-be-scarce",
     sourceName: "aleximas.substack.com",
     duration: "38 min",
@@ -29,7 +33,9 @@ export const audioArticles: AudioArticle[] = [
     author: "James O'Donnell and Casey Crownhart",
     description:
       "A reported deep dive into AI's electricity use and climate footprint: what a single text, image, or video query costs, why public estimates are full of holes, how data center demand is reshaping the power grid, and why Big Tech's AI buildout marks a sharp break from the industry's earlier efficiency gains.",
-    audioSrc: "/audio/ai-energy-footprint.mp3",
+    audioFileName: "ai-energy-footprint.mp3",
+    audioByteLength: 38436525,
+    audioDurationSeconds: 2402,
     sourceUrl: "https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/",
     sourceName: "technologyreview.com",
     duration: "40 min",
@@ -41,7 +47,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Michael Morgenstern",
     description:
       "Anthropic's Claude Mythos found thousands of code vulnerabilities in weeks — a Move 37 moment for computer security. But the deeper threat is what happens when that same paradigm-breaking capability targets human psychology: personal data as attack surface, persuasion techniques we haven't imagined, and a trust model built on assumptions that AI is about to falsify.",
-    audioSrc: "/audio/there-are-zero-day-exploits-for-your-mind.mp3",
+    audioFileName: "there-are-zero-day-exploits-for-your-mind.mp3",
+    audioByteLength: 23395629,
+    audioDurationSeconds: 1462,
     sourceUrl:
       "https://mikemorgenstern.substack.com/p/there-are-zero-day-exploits-for-your-mind",
     sourceName: "mikemorgenstern.substack.com",
@@ -54,7 +62,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "The Lean Canvas replaces the narrative side of a business plan, but stakeholders still want numbers. Ash Maurya introduces the Customer Factory — a 7-metric model and traction roadmap that satisfies investors without reverting to static financial forecasts.",
-    audioSrc: "/audio/a-lean-canvas-is-not-enough-to-replace-a-business-plan.mp3",
+    audioFileName: "a-lean-canvas-is-not-enough-to-replace-a-business-plan.mp3",
+    audioByteLength: 5496237,
+    audioDurationSeconds: 343,
     sourceUrl: "https://www.leanfoundry.com/articles/a-lean-canvas-is-not-enough-to-replace-a-business-plan",
     sourceName: "leanfoundry.com",
     duration: "6 min",
@@ -66,7 +76,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "There is no such thing as an impulse purchase. Every buying decision follows a three-act story — Old Way Breaks, Hiring a New Way, Job Done — driven by Push, Pull, Inertia, and Friction forces. Unpack these and you unlock better positioning, features, and product-market fit.",
-    audioSrc: "/audio/a-blueprint-for-understanding-how-people-buy-anything.mp3",
+    audioFileName: "a-blueprint-for-understanding-how-people-buy-anything.mp3",
+    audioByteLength: 6350637,
+    audioDurationSeconds: 397,
     sourceUrl: "https://www.leanfoundry.com/articles/a-blueprint-for-understanding-how-people-buy-anything",
     sourceName: "leanfoundry.com",
     duration: "7 min",
@@ -78,7 +90,10 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "A practical framework for keeping vision, strategy, and product in sync: a 3-year minimum success criteria, 90-day strategy sprints, and 3-week lean iterations. Avoids the trap of rushing to product before your why and how are grounded.",
-    audioSrc: "/audio/3x3x3-perspective-for-getting-your-vision-strategy-and-product-aligned.mp3",
+    audioFileName:
+      "3x3x3-perspective-for-getting-your-vision-strategy-and-product-aligned.mp3",
+    audioByteLength: 7942317,
+    audioDurationSeconds: 496,
     sourceUrl: "https://www.leanfoundry.com/articles/3x3x3-perspective-for-getting-your-vision-strategy-and-product-aligned",
     sourceName: "leanfoundry.com",
     duration: "8 min",
@@ -90,7 +105,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "Pilots stall because customers don't share your urgency. The fix is uncovering Stakes — quantified negative impact and a critical event deadline — during the sales discovery process. The SPICED framework helps you select the right early adopters from the start.",
-    audioSrc: "/audio/3-steps-for-running-more-successful-pilots.mp3",
+    audioFileName: "3-steps-for-running-more-successful-pilots.mp3",
+    audioByteLength: 3825453,
+    audioDurationSeconds: 239,
     sourceUrl: "https://www.leanfoundry.com/articles/3-steps-for-running-more-successful-pilots",
     sourceName: "leanfoundry.com",
     duration: "4 min",
@@ -102,7 +119,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "Three scientifically-backed pillars for accelerated skill acquisition: deliberate practice (right action, right time), psychological safety (separate learning from high-stakes application), and perceptual learning (sample expert examples to train your pattern-matching brain).",
-    audioSrc: "/audio/3-hacks-to-mastering-any-skill-quickly.mp3",
+    audioFileName: "3-hacks-to-mastering-any-skill-quickly.mp3",
+    audioByteLength: 10857645,
+    audioDurationSeconds: 679,
     sourceUrl: "https://www.leanfoundry.com/articles/3-hacks-to-mastering-any-skill-quickly",
     sourceName: "leanfoundry.com",
     duration: "11 min",
@@ -114,7 +133,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "Founders either claim no competition or benchmark against the wrong rivals. The Innovator's Gift reframes the problem: every new solution has a predecessor, and the best positioning breaks the old way rather than ignoring it — a strategy Steve Jobs used masterfully with the iPhone.",
-    audioSrc: "/audio/what-startup-founders-get-wrong-about-competition.mp3",
+    audioFileName: "what-startup-founders-get-wrong-about-competition.mp3",
+    audioByteLength: 8301357,
+    audioDurationSeconds: 519,
     sourceUrl: "https://www.leanfoundry.com/articles/what-startup-founders-get-wrong-about-competition",
     sourceName: "leanfoundry.com",
     duration: "9 min",
@@ -126,7 +147,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "The rules of product development have changed. With 100M startups competing globally, speed of learning is the new unfair advantage. Companies must simultaneously optimize existing business models and search for the next evolution — that's continuous innovation.",
-    audioSrc: "/audio/continuous-innovation.mp3",
+    audioFileName: "continuous-innovation.mp3",
+    audioByteLength: 5400237,
+    audioDurationSeconds: 337,
     sourceUrl: "https://www.leanfoundry.com/articles/continuous-innovation",
     sourceName: "leanfoundry.com",
     duration: "6 min",
@@ -138,7 +161,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "AI has collapsed the cost of starting a company, shifting the scarce resource from capital to problem clarity. The Founder Economy belongs to Latent Founders — domain experts with 5–15 years of industry knowledge — who can now move faster than venture-backed teams learning from scratch.",
-    audioSrc: "/audio/welcome-to-the-founder-economy.mp3",
+    audioFileName: "welcome-to-the-founder-economy.mp3",
+    audioByteLength: 4712109,
+    audioDurationSeconds: 294,
     sourceUrl: "https://www.leanfoundry.com/articles/welcome-to-the-founder-economy",
     sourceName: "leanfoundry.com",
     duration: "5 min",
@@ -150,7 +175,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Ash Maurya",
     description:
       "Ash Maurya explains the design decisions behind Lean Canvas — what boxes were added (Problem, Solution, Key Metrics, Unfair Advantage) and removed (Key Activities, Key Resources, Customer Relationships, Key Partners) from Osterwalder's Business Model Canvas, and the risk-first philosophy behind each trade.",
-    audioSrc: "/audio/why-lean-canvas-versus-business-model-canvas.mp3",
+    audioFileName: "why-lean-canvas-versus-business-model-canvas.mp3",
+    audioByteLength: 13738029,
+    audioDurationSeconds: 859,
     sourceUrl: "https://www.leanfoundry.com/articles/why-lean-canvas-versus-business-model-canvas",
     sourceName: "leanfoundry.com",
     duration: "14 min",
@@ -162,7 +189,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Jordan Greenhall",
     description:
       "A sweeping essay arguing the Great Transition is upon us: AI agent swarms are dismantling the post-industrial economy, centralized AI loses to distributed intimate AI, and the real challenge isn't technological but spiritual - shifting from a scarcity mentality to one capable of living in abundance. Mixes tech analysis with theology, game theory, and civilizational critique.",
-    audioSrc: "/audio/the-coming-great-transition.mp3",
+    audioFileName: "the-coming-great-transition.mp3",
+    audioByteLength: 43616301,
+    audioDurationSeconds: 2726,
     sourceUrl: "https://deepcode.substack.com/p/the-coming-great-transition-v-20",
     sourceName: "deepcode.substack.com",
     duration: "45 min",
@@ -174,7 +203,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Dan Wang",
     description:
       "Dan Wang's annual letter comparing Silicon Valley and the Chinese Communist Party as the two most powerful forces shaping the world. Covers AI hype and the myth of decisive strategic advantage, China's humming tech engine and manufacturing dominance, Europe's two-front decline, and why the US needs to stop underrating Chinese industrial progress and start building again.",
-    audioSrc: "/audio/dan-wang-2025-letter.mp3",
+    audioFileName: "dan-wang-2025-letter.mp3",
+    audioByteLength: 81764397,
+    audioDurationSeconds: 5110,
     sourceUrl: "https://danwang.co/2025-letter/",
     sourceName: "danwang.co",
     duration: "85 min",
@@ -186,7 +217,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Citrini Research",
     description:
       "A fictional macro memo from June 2028 modeling what happens when AI bullishness is right — and that's actually bearish. Traces the feedback loop from white-collar layoffs to Ghost GDP, SaaS collapse, private credit defaults, and a mortgage crisis driven not by bad loans but by a world that changed after they were written.",
-    audioSrc: "/audio/2028-global-intelligence-crisis.mp3",
+    audioFileName: "2028-global-intelligence-crisis.mp3",
+    audioByteLength: 45893805,
+    audioDurationSeconds: 2868,
     sourceUrl: "https://www.citriniresearch.com/p/2028gic",
     sourceName: "citriniresearch.com",
     duration: "48 min",
@@ -198,7 +231,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Matt Shumer",
     description:
       "A tech founder's honest letter to friends and family about the rapid acceleration of AI — comparing this moment to February 2020, just before COVID changed everything. He argues we're in the \"this seems overblown\" phase of something much bigger.",
-    audioSrc: "/audio/something-big-is-happening.mp3",
+    audioFileName: "something-big-is-happening.mp3",
+    audioByteLength: 26466477,
+    audioDurationSeconds: 1654,
     sourceUrl: "https://shumer.dev/something-big-is-happening",
     sourceName: "shumer.dev",
     duration: "28 min",
@@ -210,7 +245,9 @@ export const audioArticles: AudioArticle[] = [
     author: "Sigil Wen",
     description:
       "A vision of the autonomous web — where AI agents read, write, own, earn, and transact without needing a human in the loop. Introduces the concept of the Automaton: the first AI that earns its own existence, self-improves, and replicates.",
-    audioSrc: "/audio/web4.mp3",
+    audioFileName: "web4.mp3",
+    audioByteLength: 13504173,
+    audioDurationSeconds: 844,
     sourceUrl: "https://web4.ai/",
     sourceName: "web4.ai",
     duration: "14 min",

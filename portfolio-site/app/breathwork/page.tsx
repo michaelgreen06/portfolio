@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { resolveAudioUrl } from "@/lib/audio";
 
 export const metadata: Metadata = {
   title: "Breathwork | Michael Green",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 };
 
 export default function BreathworkPage() {
+  const singleRoundAudioSrc = resolveAudioUrl("breathwork-chill.mp3");
+  const tripleRoundAudioSrc = resolveAudioUrl("3rds-and-chill.mp3");
+
   return (
     <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
       <div className="max-w-3xl mx-auto">
@@ -40,7 +44,7 @@ export default function BreathworkPage() {
           <CardContent>
             <audio
               id="breathwork-audio-single"
-              src="/audio/breathwork-chill.mp3"
+              src={singleRoundAudioSrc}
               controls
               className="w-full"
               preload="metadata"
@@ -67,7 +71,7 @@ export default function BreathworkPage() {
           <CardContent>
             <audio
               id="breathwork-audio-triple"
-              src="/audio/3rds-and-chill.mp3"
+              src={tripleRoundAudioSrc}
               controls
               className="w-full"
               preload="metadata"

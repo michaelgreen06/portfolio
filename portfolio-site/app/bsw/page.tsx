@@ -17,6 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { resolveAudioUrl } from "@/lib/audio";
 
 export const metadata: Metadata = {
   title: "Boulder Startup Week 2026 | Michael Green",
@@ -88,10 +89,9 @@ const resources: ResourceLink[] = [
   },
   {
     label: "Audio of BSW Presentation",
-    href: "/audio/now-that-ai-can-build-anything-clipd.mp3",
+    href: resolveAudioUrl("now-that-ai-can-build-anything-clipd.mp3"),
     description: "Listen to the presentation audio.",
     icon: Headphones,
-    internal: true,
     openInNewTab: true,
   },
   {
