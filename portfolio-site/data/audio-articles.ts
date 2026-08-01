@@ -14,6 +14,20 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "the-semis-software-that-builds-the-chip-before-the-chip-exists",
+    title: "The Semis Software That Builds the Chip Before the Chip Exists",
+    author: "Footnote Capital",
+    description:
+      "A long-form deep dive into TCAD and the semiconductor design software stack that simulates chips before silicon exists, framed through cosmic rays, soft errors, EDA history, and the last independent survivor of decades of industry consolidation.",
+    audioFileName: "substack-semis-software.mp3",
+    audioByteLength: 82195245,
+    audioDurationSeconds: 8994,
+    sourceUrl: "https://footnotecapital.substack.com/p/the-secret-semis-software-that-builds",
+    sourceName: "footnotecapital.substack.com",
+    duration: "150 min",
+    publishedDate: "2026-07-14",
+  },
+  {
     slug: "what-will-be-scarce",
     title: "What will be scarce?",
     author: "Alex Imas",
