@@ -14,6 +14,20 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "water-bankruptcy-the-70-of-our-aquifers",
+    title: "Water Bankruptcy: The 70% of Our Aquifers Now in Decline",
+    author: "Mark Roberts",
+    description:
+      "How seventy percent of the world’s great aquifers came to be in decline, why Lake Mead hit its all-time record low three days ago, and what happens when the global water supply runs dry?",
+    audioFileName: "water-bankruptcy-the-70-of-our-aquifers.mp3",
+    audioByteLength: 39621549,
+    audioDurationSeconds: 6604,
+    sourceUrl: "https://www.4hunger.org/p/water-bankruptcy-the-70-of-our-aquifers",
+    sourceName: "4hunger.org",
+    duration: "110 min",
+    publishedDate: "2026-08-12",
+  },
+  {
     slug: "the-semis-software-that-builds-the-chip-before-the-chip-exists",
     title: "The Semis Software That Builds the Chip Before the Chip Exists",
     author: "Footnote Capital",
