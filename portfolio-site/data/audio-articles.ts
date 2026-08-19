@@ -14,6 +14,20 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "linear-method-practices-for-building",
+    title: "The Linear Method: Practices for Building",
+    author: "Linear",
+    description:
+      "A single combined narration of all eleven public Linear Method chapters, covering product direction, goals, prioritization, scoping, momentum, writing issues, design work, user feedback, launches, and building in public.",
+    audioFileName: "linear-method-practices-for-building.mp3",
+    audioByteLength: 10001757,
+    audioDurationSeconds: 1667,
+    sourceUrl: "https://linear.app/method",
+    sourceName: "linear.app",
+    duration: "28 min",
+    publishedDate: "2026-08-19",
+  },
+  {
     slug: "water-bankruptcy-the-70-of-our-aquifers",
     title: "Water Bankruptcy: The 70% of Our Aquifers Now in Decline",
     author: "Mark Roberts",
