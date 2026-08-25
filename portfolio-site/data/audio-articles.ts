@@ -25,7 +25,7 @@ export const audioArticles: AudioArticle[] = [
     sourceUrl: "https://www.anthropic.com/research/multiagent-systems",
     sourceName: "anthropic.com",
     duration: "26 min",
-    publishedDate: "2026-08-13",
+    publishedDate: "2026-08-25",
   },
   {
     slug: "linear-method-practices-for-building",
