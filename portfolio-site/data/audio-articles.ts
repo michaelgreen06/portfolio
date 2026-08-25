@@ -14,6 +14,20 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "patterns-and-problems-in-emerging-multiagent-systems",
+    title: "Patterns and problems in emerging multiagent systems",
+    author: "Frontier Red Team",
+    description:
+      "Anthropic explores how swarms of AI agents coordinate, conform, collude, mis-handle trust, and escalate conflict—drawing on experiments in vulnerability hunting, game building, pricing games, hidden-profile tasks, and contradictory deployment goals.",
+    audioFileName: "patterns-and-problems-in-emerging-multiagent-systems.mp3",
+    audioByteLength: 9400125,
+    audioDurationSeconds: 1567,
+    sourceUrl: "https://www.anthropic.com/research/multiagent-systems",
+    sourceName: "anthropic.com",
+    duration: "26 min",
+    publishedDate: "2026-08-13",
+  },
+  {
     slug: "linear-method-practices-for-building",
     title: "The Linear Method: Practices for Building",
     author: "Linear",
