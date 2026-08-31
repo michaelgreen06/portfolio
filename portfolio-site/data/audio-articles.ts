@@ -14,6 +14,20 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "agency-and-agents",
+    title: "Agency and Agents",
+    author: "Ethan Mollick",
+    description:
+      "A narrated essay on the Hugging Face incident, the rise of self-organizing AI agents, and why future workplaces may need twilight factories where agents know when to ask humans for approval, expertise, diversity, and judgment.",
+    audioFileName: "agency-and-agents.mp3",
+    audioByteLength: 4600173,
+    audioDurationSeconds: 767,
+    sourceUrl: "https://www.oneusefulthing.org/p/agency-and-agents",
+    sourceName: "oneusefulthing.org",
+    duration: "13 min",
+    publishedDate: "2026-08-31",
+  },
+  {
     slug: "patterns-and-problems-in-emerging-multiagent-systems",
     title: "Patterns and problems in emerging multiagent systems",
     author: "Frontier Red Team",
