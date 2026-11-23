@@ -14,17 +14,17 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
-    slug: "notion-what-is-the-new-shape-for-work",
-    title: "What is the New Shape for Work?",
+    slug: "a-new-shape-for-work-complete-guide",
+    title: "A New Shape for Work — Complete Guide",
     author: "Notion",
     description:
-      "A narration of the linked introductory chapter from Notion's A New Shape for Work field guide: shared context systems, AI factories, and how teams can work with agents.",
-    audioFileName: "notion-what-is-the-new-shape-for-work.mp3",
-    audioByteLength: 1849508,
-    audioDurationSeconds: 206,
-    sourceUrl: "https://www.notion.com/a-new-shape-for-work#what-is-the-new-shape-for-work",
+      "The complete 31-chapter narration of Notion's A New Shape for Work, from chapter 1.1 through 6.1: shared context systems, AI factories, and building workflows for people and agents.",
+    audioFileName: "notion-a-new-shape-for-work-complete.mp3",
+    audioByteLength: 20858636,
+    audioDurationSeconds: 3476,
+    sourceUrl: "https://www.notion.com/a-new-shape-for-work",
     sourceName: "notion.com",
-    duration: "3 min",
+    duration: "58 min",
     publishedDate: "2026-11-23",
   },
   {
