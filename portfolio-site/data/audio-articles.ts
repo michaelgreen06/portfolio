@@ -14,6 +14,20 @@ export interface AudioArticle {
 
 export const audioArticles: AudioArticle[] = [
   {
+    slug: "notion-what-is-the-new-shape-for-work",
+    title: "What is the New Shape for Work?",
+    author: "Notion",
+    description:
+      "A narration of the linked introductory chapter from Notion's A New Shape for Work field guide: shared context systems, AI factories, and how teams can work with agents.",
+    audioFileName: "notion-what-is-the-new-shape-for-work.mp3",
+    audioByteLength: 1849508,
+    audioDurationSeconds: 206,
+    sourceUrl: "https://www.notion.com/a-new-shape-for-work#what-is-the-new-shape-for-work",
+    sourceName: "notion.com",
+    duration: "3 min",
+    publishedDate: "2026-11-23",
+  },
+  {
     slug: "agency-and-agents",
     title: "Agency and Agents",
     author: "Ethan Mollick",
